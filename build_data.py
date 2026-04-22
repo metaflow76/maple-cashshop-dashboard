@@ -316,6 +316,13 @@ sale_608_events = [
     ]},
 ]
 
+sale_607_packages = [
+    {"name": "추가옵션 전승 스크롤", "label": "NEW", "price": 49000, "unit": "캐시",
+     "note": "추가옵션 정보 전승 · 1회 교환 가능 · 유효기간 30일 · 상시판매", "items": []},
+    {"name": "잠재능력 전승 스크롤", "label": "NEW", "price": 99000, "unit": "캐시",
+     "note": "잠재능력 정보 전승 · 1회 교환 가능 · 유효기간 30일 · 상시판매", "items": []},
+]
+
 sale_610_packages = [
     {"name": "메이플 로얄 스타일", "label": "HOT", "price": 2200, "unit": "캐시",
      "note": "7일 이내 사용 가능, 상시 판매",
@@ -380,19 +387,27 @@ data = {
             "packages": sale_608_packages,
             "events": sale_608_events,
         },
+        {
+            "id": 607, "type": "Sale",
+            "title": "3월 19일 캐시아이템 업데이트 - 추가옵션/잠재능력 전승 스크롤",
+            "date": "2026-03-19", "status": "판매중",
+            "url": "https://maplestory.nexon.com/News/CashShop/Sale/607",
+            "packages": sale_607_packages,
+            "events": [],
+        },
     ],
     "progress": {
         "total_planned_sale": 100,
-        "completed_sale": 5,
+        "completed_sale": 6,
         "completed_endofsale": 0,
-        "total_items_registered": 222,
+        "total_items_registered": 224,
     },
     "current_task": {
-        "id": 607,
+        "id": 605,
         "type": "Sale",
-        "title": "Sale/607 강화/능력치 주문서",
+        "title": "Sale/605 원더베리/루나크리스탈",
         "status": "대기",
-        "url": "https://maplestory.nexon.com/News/CashShop/Sale/607",
+        "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
         "steps": [
             {"name": "원문 공지 확인 & 배너 URL 추출", "status": "pending"},
             {"name": "배너 이미지 다운로드 (content.png)", "status": "pending"},
@@ -406,64 +421,22 @@ data = {
         "ocr_results": None,
     },
     "last_ocr_preview": {
-        "id": 608,
-        "title": "Sale/608 메이플스토리 & 진 - 판독 결과",
+        "id": 607,
+        "title": "Sale/607 추가옵션/잠재능력 전승 스크롤 - 판독 결과",
         "confirmed": True,
         "confirmed_at": "2026-04-22",
-        "summary": "5개 패키지 · 45개 DB 아이템 (패키지 5 + 남/여 구성품 30 + 이벤트 보상 5 + 진 전용 5)",
+        "summary": "2개 주문서 아이템 (상시판매 · 1회 교환, 유효 30일)",
         "categories": [
-            {"name": "🌌 아스트랄 세레나데 패키지 남/여 (각 69,800 캐시)", "subcategories": [
-                {"name": "Row 1 main (5종, 남/여 한벌옷만 상이)", "items": [
-                    "모자: 아스트랄 크라운 (3,000)",
-                    "모자: 아스트랄 크리스탈 (3,000)",
-                    "한벌옷: 아스트랄 갤럭시(남) / 아스트랄 스텔라(여) (3,500)",
-                    "신발: 아스트랄 스텝 (1,800)",
-                    "무기: 아스트랄 레이피어 (5,500)",
-                ]},
-                {"name": "Row 2 add (5종, 남녀 공통)", "items": [
-                    "망토: 아스트랄 케이프 (3,500)",
-                    "이펙트: 아스트랄 스파클 이펙트 교환권 (9,900)",
-                    "데미지 스킨: 아스트랄 세레나데 액션 데미지 스킨 (유닛) (9,900)",
-                    "의자: 아스트랄 오빗 (9,900)",
-                    "반지: 아스트랄 세레나데 명찰 반지 (9,900)",
-                ]},
-                {"name": "Row 3 (1 paid + 4 BONUS)", "items": [
-                    "반지: 아스트랄 세레나데 말풍선 반지 (9,900)",
-                    "장갑: 실버 스타 리슬릿 (BONUS)",
-                    "눈장식: 티어 스텔라 (BONUS)",
-                    "얼굴장식: 스타 글리터 (BONUS)",
-                    "귀고리: 셀레스티얼 인이어 (BONUS)",
-                ]},
-            ]},
-            {"name": "🎁 진 부스터 패키지 (10,000 캐시, 이벤트성 · 유효 90일)", "subcategories": [
-                {"name": "구성품 5종", "items": [
-                    "솔 에르다 x1",
-                    "VIP 사우나 이용권 x4",
-                    "선택 심볼 교환권 x100 (아케인 5 또는 어센틱 2)",
-                    "상급 EXP 교환권 x2,000",
-                    "메카베리 농장 입장권 x2",
-                ]},
-            ]},
-            {"name": "⭐ 신규 캐시 아이템 (진 전용, 5종)", "subcategories": [
-                {"name": "진 전용", "items": [
-                    "모자: NPC 진 가발 (4,900)",
-                    "신발: 달려라 용사 (4,900)",
-                    "무기: 슈퍼 참치 (9,900)",
-                    "눈장식: 안경안경안 (4,900)",
-                    "데미지 스킨: 진 친필 데미지 스킨 (유닛) (9,900)",
-                ]},
-            ]},
-            {"name": "💄 뷰티 쿠폰 (2종)", "subcategories": [
-                {"name": "쿠폰", "items": [
-                    "헤어: 세레나데 헤어 쿠폰 (20,000)",
-                    "성형: 세레나데 성형 쿠폰 (10,000)",
+            {"name": "📜 전승 스크롤 (주문서 2종)", "subcategories": [
+                {"name": "상시판매", "items": [
+                    "추가옵션 전승 스크롤 (49,000 캐시)",
+                    "잠재능력 전승 스크롤 (99,000 캐시)",
                 ]},
             ]},
         ],
     },
     "queue": [
-        {"id": 607, "type": "Sale", "title": "강화/능력치 주문서", "status": "진행 중"},
-        {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "대기"},
+        {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "진행 중"},
         {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "대기"},
         {"id": 595, "type": "Sale", "title": "성별 변경 쿠폰", "status": "대기"},
         {"id": 560, "type": "Sale", "title": "스타일링 스타터 패키지", "status": "대기"},
@@ -474,6 +447,7 @@ data = {
         {"id": 610, "type": "Sale", "title": "로얄스타일 쿠폰 & 마스터피스", "items": 43, "completed_at": "2026-04-22"},
         {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "items": 42, "completed_at": "2026-04-22"},
         {"id": 608, "type": "Sale", "title": "메이플스토리 & 진 (아스트랄 세레나데)", "items": 45, "completed_at": "2026-04-22"},
+        {"id": 607, "type": "Sale", "title": "추가옵션/잠재능력 전승 스크롤", "items": 2, "completed_at": "2026-04-22"},
     ],
 }
 
