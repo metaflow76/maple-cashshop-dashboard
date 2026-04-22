@@ -1489,64 +1489,337 @@
           ]
         }
       ]
+    },
+    {
+      "id": 596,
+      "type": "Sale",
+      "title": "2월 19일 캐시아이템 업데이트 - 초이스 헤어 & 성형 쿠폰",
+      "date": "2026-02-19",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/596",
+      "packages": [
+        {
+          "name": "초이스 헤어 쿠폰",
+          "label": null,
+          "price": 3500,
+          "unit": "캐시",
+          "note": "마일리지 사용 가능 / 14일 이내 사용 가능. 남자/여자 헤어 중 1가지 선택 변경.",
+          "items": [
+            {
+              "name": "골목대장 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "데어데빌 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "무스킹 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "바닐라보이헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "번개 스크래치",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "소프트 울프 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "잎새 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "파이니 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "폭신 너굴 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "피크닉 헤어",
+              "part": "헤어",
+              "note": "남자"
+            },
+            {
+              "name": "꽃망울 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "두나 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "로즈마리",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "몽실구름 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "벨롯 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "삐삐롱 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "새치미 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "스타업스타일 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "천국의 날개 헤어",
+              "part": "헤어",
+              "note": "여자"
+            },
+            {
+              "name": "포근 너굴 헤어",
+              "part": "헤어",
+              "note": "여자"
+            }
+          ]
+        },
+        {
+          "name": "초이스 성형 쿠폰",
+          "label": null,
+          "price": 2500,
+          "unit": "캐시",
+          "note": "마일리지 사용 가능 / 14일 이내 사용 가능. 남자/여자 성형 중 1가지 선택 변경.",
+          "items": [
+            {
+              "name": "근심어린 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "남자얼굴15",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "남자얼굴7",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "뭉뭉 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "방글방글 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "보드레 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "용사탄생 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "의심 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "좋은사람 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "찡깨 얼굴",
+              "part": "얼굴",
+              "note": "남자"
+            },
+            {
+              "name": "근심어린 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "뭉뭉 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "방글방글 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "보드레 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "여자얼굴18",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "여자얼굴7",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "여자얼굴9",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "용사탄생 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "의심 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            },
+            {
+              "name": "찡깨 얼굴",
+              "part": "얼굴",
+              "note": "여자"
+            }
+          ]
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 595,
+      "type": "Sale",
+      "title": "성별 변경 쿠폰",
+      "date": "2026-01-15",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/595",
+      "packages": [
+        {
+          "name": "성별 변경 쿠폰",
+          "label": null,
+          "price": 15000,
+          "unit": "캐시",
+          "note": "메일로 발송, 유효기간 30일. 캐릭터 성별 변경. 미착용 슈퍼스타/앨범리버스 제로/듀얼블레이드/키네시스 사용 불가. 성별 변경 시 헤어/성형 초기화. 결혼한 캐릭터 사용 불가. 마일샵 사용 불가.",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 560,
+      "type": "Sale",
+      "title": "스타일링 스타터 패키지",
+      "date": "2025-01-16",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/560",
+      "packages": [
+        {
+          "name": "스타일링 스타터 패키지",
+          "label": null,
+          "price": 9900,
+          "unit": "캐시",
+          "note": "80% 할인 (원가 50,100). 메이플ID당 1회 구매. 교환 불가. 5종 구성.",
+          "items": [
+            {
+              "name": "밸런스 믹스 염색 쿠폰",
+              "part": "쿠폰",
+              "note": "4,800 캐시 · 원가 24,000 · 유효기간 7일 · 믹스 염색"
+            },
+            {
+              "name": "밸런스 믹스 컬러렌즈 쿠폰",
+              "part": "쿠폰",
+              "note": "2,400 캐시 · 원가 12,000 · 유효기간 7일 · 믹스 렌즈"
+            },
+            {
+              "name": "컬러링 프리즘",
+              "part": "쿠폰",
+              "note": "1,100 캐시 · 유효기간 30일 · 아이템 염색"
+            },
+            {
+              "name": "프리스타일 쿠폰",
+              "part": "쿠폰",
+              "note": "1,050 캐시 · 원가 5,500 · 유효기간 30일 · 성별 제한 해제"
+            },
+            {
+              "name": "신비의 모루",
+              "part": "기타",
+              "note": "550 캐시 · 원가 2,700 · 영구 · 같은 종류 장비 합성 외형 변경"
+            }
+          ]
+        }
+      ],
+      "events": []
     }
   ],
   "progress": {
     "total_planned_sale": 100,
-    "completed_sale": 7,
+    "completed_sale": 10,
     "completed_endofsale": 0,
-    "total_items_registered": 248
+    "total_items_registered": 297
   },
   "current_task": {
     "id": null,
     "type": "ParallelBatch",
-    "title": "병렬 처리 중: Sale/596, 595, 560 (OCR 판독 단계까지 동시 진행)",
-    "status": "진행 중",
+    "title": "판매중 큐 완료 · 다음: EndOfSale 공지 처리",
+    "status": "대기",
     "url": null,
     "steps": [
       {
-        "name": "3개 공지 원문 확인 & 배너 URL 추출",
-        "status": "in_progress"
-      },
-      {
-        "name": "3개 공지 배너 다운로드 + 슬랩/HD 크롭",
-        "status": "in_progress"
-      },
-      {
-        "name": "3개 공지 OCR 판독",
-        "status": "in_progress"
-      },
-      {
-        "name": "사용자 일괄 확인 (오타/카테고리)",
+        "name": "EndOfSale 공지 목록 수집",
         "status": "pending"
       },
       {
-        "name": "Notion DB 일괄 등록",
+        "name": "배너 다운로드 + OCR 판독",
         "status": "pending"
       },
       {
-        "name": "대시보드 data.json 갱신 & 배포",
+        "name": "사용자 확인",
+        "status": "pending"
+      },
+      {
+        "name": "Notion DB 등록",
+        "status": "pending"
+      },
+      {
+        "name": "대시보드 갱신 & 배포",
         "status": "pending"
       }
     ],
     "ocr_results": null,
-    "parallel_tasks": [
-      {
-        "id": 596,
-        "title": "초이스 헤어/성형 쿠폰",
-        "status": "OCR 진행 중"
-      },
-      {
-        "id": 595,
-        "title": "성별 변경 쿠폰",
-        "status": "OCR 진행 중"
-      },
-      {
-        "id": 560,
-        "title": "스타일링 스타터 패키지",
-        "status": "OCR 진행 중"
-      }
-    ]
+    "parallel_tasks": []
   },
   "last_ocr_preview": {
     "id": 605,
@@ -1671,26 +1944,7 @@
       }
     ]
   },
-  "queue": [
-    {
-      "id": 596,
-      "type": "Sale",
-      "title": "초이스 헤어/성형 쿠폰",
-      "status": "진행 중"
-    },
-    {
-      "id": 595,
-      "type": "Sale",
-      "title": "성별 변경 쿠폰",
-      "status": "대기"
-    },
-    {
-      "id": 560,
-      "type": "Sale",
-      "title": "스타일링 스타터 패키지",
-      "status": "대기"
-    }
-  ],
+  "queue": [],
   "completed": [
     {
       "id": 612,
@@ -1739,6 +1993,27 @@
       "type": "Sale",
       "title": "위습의 원더베리 & 루나 크리스탈",
       "items": 24,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 596,
+      "type": "Sale",
+      "title": "초이스 헤어/성형 쿠폰",
+      "items": 42,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 595,
+      "type": "Sale",
+      "title": "성별 변경 쿠폰",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 560,
+      "type": "Sale",
+      "title": "스타일링 스타터 패키지",
+      "items": 6,
       "completed_at": "2026-04-22"
     }
   ]
