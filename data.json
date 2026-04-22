@@ -1782,13 +1782,387 @@
         }
       ],
       "events": []
+    },
+    {
+      "id": 548,
+      "type": "Sale",
+      "title": "(수정) 프리스타일 쿠폰",
+      "date": "2025-07-17",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/548",
+      "packages": [
+        {
+          "name": "프리스타일 쿠폰 (1개)",
+          "label": null,
+          "price": 5500,
+          "unit": "캐시",
+          "note": "성별 제한 해제 쿠폰 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "프리스타일 쿠폰 (10개)",
+          "label": null,
+          "price": 49500,
+          "unit": "캐시",
+          "note": "10% 할인 (원가 55,000) · 상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 543,
+      "type": "Sale",
+      "title": "커스텀 믹스 염색 & 컬러렌즈 쿠폰 가격 인하",
+      "date": "2025-06-19",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/543",
+      "packages": [
+        {
+          "name": "커스텀 믹스 염색 쿠폰",
+          "label": null,
+          "price": 48000,
+          "unit": "캐시",
+          "note": "40% 인하 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "커스텀 믹스 컬러렌즈 쿠폰",
+          "label": null,
+          "price": 24000,
+          "unit": "캐시",
+          "note": "40% 인하 · 상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 542,
+      "type": "Sale",
+      "title": "밸런스 믹스 염색 & 컬러렌즈 쿠폰 가격 인하",
+      "date": "2025-06-19",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/542",
+      "packages": [
+        {
+          "name": "밸런스 믹스 염색 쿠폰",
+          "label": null,
+          "price": 24000,
+          "unit": "캐시",
+          "note": "40% 인하 (원가 39,900) · 상시판매",
+          "items": []
+        },
+        {
+          "name": "밸런스 믹스 컬러렌즈 쿠폰",
+          "label": null,
+          "price": 12000,
+          "unit": "캐시",
+          "note": "40% 인하 (원가 19,900) · 상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 512,
+      "type": "Sale",
+      "title": "(수정) 플래티넘 애플",
+      "date": "2024-12-19",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/512",
+      "packages": [
+        {
+          "name": "플래티넘 애플 (1개)",
+          "label": null,
+          "price": 3500,
+          "unit": "캐시",
+          "note": "상시판매",
+          "items": [
+            {
+              "name": "카르마 스타포스 20성 강화권(200제)",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "카르마 스타포스 20성 강화권(160제)",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "카르마 스타포스 18성 강화권(250제)",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "심연의 환생의 불꽃",
+              "part": "기타",
+              "note": null
+            },
+            {
+              "name": "경험치 4배 쿠폰 (30분)",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "펫장비 리턴 스크롤",
+              "part": "주문서",
+              "note": null
+            },
+            {
+              "name": "펫장비 이노센트 주문서 100%",
+              "part": "주문서",
+              "note": null
+            },
+            {
+              "name": "펫장비 순백의 주문서 100%",
+              "part": "주문서",
+              "note": null
+            }
+          ]
+        },
+        {
+          "name": "플래티넘 애플 (33개)",
+          "label": null,
+          "price": 99000,
+          "unit": "캐시",
+          "note": "원가 115,500캐시 · 상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 470,
+      "type": "Sale",
+      "title": "마네킹 & 헤어룸/성형룸 슬롯 확장권",
+      "date": "2024-04-18",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/470",
+      "packages": [
+        {
+          "name": "마네킹",
+          "label": null,
+          "price": 18900,
+          "unit": "캐시",
+          "note": "상시판매",
+          "items": []
+        },
+        {
+          "name": "헤어룸 슬롯 확장권",
+          "label": null,
+          "price": 17900,
+          "unit": "캐시",
+          "note": "상시판매",
+          "items": []
+        },
+        {
+          "name": "성형룸 슬롯 확장권",
+          "label": null,
+          "price": 11400,
+          "unit": "캐시",
+          "note": "상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 447,
+      "type": "Sale",
+      "title": "루나/오로라 일루전 & 일루전 리스토어",
+      "date": "2023-12-21",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/447",
+      "packages": [
+        {
+          "name": "루나 일루전",
+          "label": null,
+          "price": 3900,
+          "unit": "캐시",
+          "note": "7일 동안 사용 가능 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "오로라 일루전",
+          "label": null,
+          "price": 1900,
+          "unit": "캐시",
+          "note": "7일 동안 사용 가능 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "일루전 리스토어",
+          "label": null,
+          "price": 1500,
+          "unit": "캐시",
+          "note": "7일 동안 사용 가능 · 상시판매",
+          "items": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 400,
+      "type": "Sale",
+      "title": "(수정) 골드 애플",
+      "date": "2025-04-17",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/400",
+      "packages": [
+        {
+          "name": "골드 애플 (5개)",
+          "label": null,
+          "price": 2700,
+          "unit": "캐시",
+          "note": "원가 2,750캐시 · 상시판매",
+          "items": [
+            {
+              "name": "15차 스타포스 17성 100% 강화권",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "16차 스타포스 17성 100% 강화권",
+              "part": "쿠폰",
+              "note": null
+            },
+            {
+              "name": "진 힐라의 소울",
+              "part": "기타",
+              "note": null
+            },
+            {
+              "name": "무르무르의 소울",
+              "part": "기타",
+              "note": null
+            },
+            {
+              "name": "블러디 퀸의 소울",
+              "part": "기타",
+              "note": null
+            },
+            {
+              "name": "플레드의 소울",
+              "part": "기타",
+              "note": null
+            },
+            {
+              "name": "놀라운 긍정의 혼돈 주문서 100%",
+              "part": "주문서",
+              "note": null
+            }
+          ]
+        },
+        {
+          "name": "골드 애플 (15개)",
+          "label": null,
+          "price": 7800,
+          "unit": "캐시",
+          "note": "원가 8,250캐시 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "골드 애플 (50개)",
+          "label": null,
+          "price": 25000,
+          "unit": "캐시",
+          "note": "원가 27,500캐시 · 상시판매",
+          "items": []
+        },
+        {
+          "name": "골드 애플 (100개)",
+          "label": null,
+          "price": 48000,
+          "unit": "캐시",
+          "note": "원가 55,000캐시 · 상시판매",
+          "items": []
+        }
+      ],
+      "events": [
+        {
+          "name": "골드 애플 이벤트 보상",
+          "rewards": [
+            {
+              "name": "타임로이드 교환권 (남)",
+              "part": "기타",
+              "note": "안드로이드"
+            },
+            {
+              "name": "타임로이드 교환권 (여)",
+              "part": "기타",
+              "note": "안드로이드"
+            },
+            {
+              "name": "메이크업 의자 선택권(2종)",
+              "part": "쿠폰",
+              "note": "블루/핑크 중 선택"
+            },
+            {
+              "name": "메이크업 블루 의자",
+              "part": "의자",
+              "note": ""
+            },
+            {
+              "name": "메이크업 핑크 의자",
+              "part": "의자",
+              "note": ""
+            },
+            {
+              "name": "핑크빈 캔디팝 의자",
+              "part": "의자",
+              "note": ""
+            },
+            {
+              "name": "계란 후라이 라이딩 (90일) 교환권",
+              "part": "기타",
+              "note": ""
+            },
+            {
+              "name": "계란 후라이 라이딩 (영구) 교환권",
+              "part": "기타",
+              "note": ""
+            },
+            {
+              "name": "냥냥호 라이딩 (90일) 교환권",
+              "part": "기타",
+              "note": ""
+            },
+            {
+              "name": "냥냥호 라이딩 (영구) 교환권",
+              "part": "기타",
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "골드 애플 조각 보상",
+          "rewards": [
+            {
+              "name": "주문의 흔적 2,000개",
+              "part": "기타",
+              "note": "골드 애플 조각 10개"
+            },
+            {
+              "name": "이노센트 주문서 50%",
+              "part": "주문서",
+              "note": "골드 애플 조각 50개"
+            },
+            {
+              "name": "스페셜 에디셔널 잠재능력 부여 스크롤",
+              "part": "주문서",
+              "note": "골드 애플 조각 100개"
+            }
+          ]
+        }
+      ]
     }
   ],
   "progress": {
     "total_planned_sale": 100,
-    "completed_sale": 10,
+    "completed_sale": 17,
     "completed_endofsale": 0,
-    "total_items_registered": 297
+    "total_items_registered": 343
   },
   "current_task": {
     "id": null,
@@ -2014,6 +2388,55 @@
       "type": "Sale",
       "title": "스타일링 스타터 패키지",
       "items": 6,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 548,
+      "type": "Sale",
+      "title": "(수정) 프리스타일 쿠폰",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 543,
+      "type": "Sale",
+      "title": "커스텀 믹스 염색/컬러렌즈 쿠폰 가격 인하",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 542,
+      "type": "Sale",
+      "title": "밸런스 믹스 염색/컬러렌즈 쿠폰 가격 인하",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 512,
+      "type": "Sale",
+      "title": "(수정) 플래티넘 애플",
+      "items": 10,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 470,
+      "type": "Sale",
+      "title": "마네킹 & 헤어룸/성형룸 슬롯 확장권",
+      "items": 3,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 447,
+      "type": "Sale",
+      "title": "루나/오로라 일루전 & 일루전 리스토어",
+      "items": 3,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 400,
+      "type": "Sale",
+      "title": "(수정) 골드 애플",
+      "items": 24,
       "completed_at": "2026-04-22"
     }
   ]
