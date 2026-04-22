@@ -2161,26 +2161,26 @@
   "progress": {
     "total_planned_sale": 100,
     "completed_sale": 17,
-    "completed_endofsale": 579,
-    "total_endofsale_notices": 584,
+    "completed_endofsale": 586,
+    "total_endofsale_notices": 586,
     "current_endofsale_page": 59,
     "total_endofsale_pages": 59,
-    "total_items_registered": 2543
+    "total_items_registered": 2598
   },
   "current_task": {
-    "id": "EoS-Page-59",
+    "id": "EoS-Complete",
     "type": "EndOfSale",
-    "title": "판매종료 59페이지 (최종) 처리 중 (페이지 1-58: 579건 등록 완료, 2200 엔트리)",
-    "status": "진행 중",
-    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=59",
+    "title": "판매종료 전체 59페이지 처리 완료 (586건 공지, 2255 엔트리)",
+    "status": "완료",
+    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale",
     "steps": [
       {
-        "name": "페이지 1-58 (579건) 패키지 등록",
+        "name": "페이지 1-59 (586건) 패키지 등록",
         "status": "done"
       },
       {
-        "name": "페이지 59 (최종) 순차 처리",
-        "status": "in_progress"
+        "name": "OCR 교정 사전 유지",
+        "status": "done"
       },
       {
         "name": "세부 구성품 후속 보완",
