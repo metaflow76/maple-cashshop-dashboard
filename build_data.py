@@ -308,57 +308,59 @@ data = {
     ],
     "progress": {
         "total_planned_sale": 100,
-        "completed_sale": 3,
+        "completed_sale": 4,
         "completed_endofsale": 0,
         "total_items_registered": 177,
     },
     "current_task": {
-        "id": 609,
+        "id": 608,
         "type": "Sale",
-        "title": "4월 16일 캐시아이템 업데이트 - 프리미엄 헤어 & 성형 쿠폰",
-        "status": "OCR 확인 대기",
-        "url": "https://maplestory.nexon.com/News/CashShop/Sale/609",
+        "title": "4월 16일 캐시아이템 업데이트 - 진 테마 아이템",
+        "status": "대기",
+        "url": "https://maplestory.nexon.com/News/CashShop/Sale/608",
         "steps": [
-            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "done"},
-            {"name": "배너 이미지 다운로드 (content.png)", "status": "done"},
-            {"name": "슬랩 분할 & 섹션 식별", "status": "done"},
-            {"name": "HD 섹션 크롭 생성", "status": "done"},
-            {"name": "OCR 판독으로 아이템명 확정", "status": "done"},
-            {"name": "Notion DB 아이템 등록", "status": "in_progress"},
+            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "pending"},
+            {"name": "배너 이미지 다운로드 (content.png)", "status": "pending"},
+            {"name": "슬랩 분할 & 섹션 식별", "status": "pending"},
+            {"name": "HD 섹션 크롭 생성", "status": "pending"},
+            {"name": "OCR 판독으로 아이템명 확정", "status": "pending"},
+            {"name": "Notion DB 아이템 등록", "status": "pending"},
             {"name": "검증 표 출력 & 오타 확인", "status": "pending"},
             {"name": "대시보드 data.json 갱신 & 배포", "status": "pending"},
         ],
-        "ocr_results": {
-            "title": "Sale/609 프리미엄 헤어 & 성형 쿠폰 - 판독 결과",
-            "confirmed": False,
-            "summary": "2개 패키지 · 40개 구성품 (헤어 20 + 얼굴 20). (NEW) 태그는 제거, 사용자 확정 표기 반영.",
-            "categories": [
-                {"name": "🎀 프리미엄 헤어 쿠폰 5,500 캐시", "subcategories": [
-                    {"name": "남자 헤어 (10종)", "items": [
-                        "산뜻 펌 헤어", "하이틴 보이 헤어", "라온 헤어", "나랑 헤어", "블링 쉼표 헤어",
-                        "휘핑 헤어", "잊혀진 영웅 헤어", "솔솔 헤어", "노을 헤어", "싱어송 헤어"
-                    ]},
-                    {"name": "여자 헤어 (10종)", "items": [
-                        "상큼 단발 헤어", "하이틴 걸 헤어", "홍차소녀 헤어", "캔디 드롭 헤어", "꼬마 웨이브 헤어",
-                        "설탕소녀 헤어", "잊혀진 영웅 헤어", "보헤미안 헤어", "요거트 스무디 헤어", "러브 미 헤어"
-                    ]},
+        "ocr_results": None,
+    },
+    "last_ocr_preview": {
+        "id": 609,
+        "title": "Sale/609 프리미엄 헤어 & 성형 쿠폰 - 판독 결과",
+        "confirmed": True,
+        "confirmed_at": "2026-04-22",
+        "summary": "2개 패키지 · 40개 구성품 (헤어 20 + 얼굴 20)",
+        "categories": [
+            {"name": "🎀 프리미엄 헤어 쿠폰 5,500 캐시", "subcategories": [
+                {"name": "남자 헤어 (10종)", "items": [
+                    "산뜻 펌 헤어", "하이틴 보이 헤어", "라온 헤어", "나랑 헤어", "블링 쉼표 헤어",
+                    "휘핑 헤어", "잊혀진 영웅 헤어", "솔솔 헤어", "노을 헤어", "싱어송 헤어"
                 ]},
-                {"name": "💄 프리미엄 성형 쿠폰 3,500 캐시", "subcategories": [
-                    {"name": "남자 성형 (10종)", "items": [
-                        "개나리 얼굴", "스위트 캔디 얼굴", "왜요 얼굴", "앙기남 얼굴", "카라 얼굴",
-                        "호박별 얼굴", "잊혀진 영웅 얼굴", "콩콩이 성형", "미래적인 얼굴", "별빛이 내린다 얼굴"
-                    ]},
-                    {"name": "여자 성형 (10종)", "items": [
-                        "개나리 얼굴", "스위트 캔디 얼굴", "왜요 얼굴", "앙기녀 얼굴", "카라 얼굴",
-                        "호박별 얼굴", "잊혀진 영웅 얼굴", "콩콩이 성형", "미래적인 얼굴", "별빛이 내린다 얼굴"
-                    ]},
+                {"name": "여자 헤어 (10종)", "items": [
+                    "상큼 단발 헤어", "하이틴 걸 헤어", "홍차소녀 헤어", "캔디 드롭 헤어", "꼬마 웨이브 헤어",
+                    "설탕소녀 헤어", "잊혀진 영웅 헤어", "보헤미안 헤어", "요거트 스무디 헤어", "러브 미 헤어"
                 ]},
-            ],
-        },
+            ]},
+            {"name": "💄 프리미엄 성형 쿠폰 3,500 캐시", "subcategories": [
+                {"name": "남자 성형 (10종)", "items": [
+                    "개나리 얼굴", "스위트 캔디 얼굴", "왜요 얼굴", "앙기남 얼굴", "카라 얼굴",
+                    "호박별 얼굴", "잊혀진 영웅 얼굴", "콩콩이 성형", "미래적인 얼굴", "별빛이 내린다 얼굴"
+                ]},
+                {"name": "여자 성형 (10종)", "items": [
+                    "개나리 얼굴", "스위트 캔디 얼굴", "왜요 얼굴", "앙기녀 얼굴", "카라 얼굴",
+                    "호박별 얼굴", "잊혀진 영웅 얼굴", "콩콩이 성형", "미래적인 얼굴", "별빛이 내린다 얼굴"
+                ]},
+            ]},
+        ],
     },
     "queue": [
-        {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "status": "진행 중"},
-        {"id": 608, "type": "Sale", "title": "진 테마 아이템", "status": "대기"},
+        {"id": 608, "type": "Sale", "title": "진 테마 아이템", "status": "진행 중"},
         {"id": 607, "type": "Sale", "title": "강화/능력치 주문서", "status": "대기"},
         {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "대기"},
         {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "대기"},
@@ -369,6 +371,7 @@ data = {
         {"id": 612, "type": "Sale", "title": "부티크 기프트", "items": 4, "completed_at": "2026-04-22"},
         {"id": 611, "type": "Sale", "title": "흑발/백안 로얄스타일 쿠폰", "items": 88, "completed_at": "2026-04-22"},
         {"id": 610, "type": "Sale", "title": "로얄스타일 쿠폰 & 마스터피스", "items": 43, "completed_at": "2026-04-22"},
+        {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "items": 42, "completed_at": "2026-04-22"},
     ],
 }
 
