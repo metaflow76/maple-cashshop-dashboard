@@ -2161,34 +2161,33 @@
   "progress": {
     "total_planned_sale": 100,
     "completed_sale": 17,
-    "completed_endofsale": 0,
-    "total_items_registered": 343
+    "completed_endofsale": 10,
+    "total_endofsale_notices": 584,
+    "current_endofsale_page": 2,
+    "total_endofsale_pages": 59,
+    "total_items_registered": 363
   },
   "current_task": {
-    "id": null,
-    "type": "ParallelBatch",
-    "title": "판매중 큐 완료 · 다음: EndOfSale 공지 처리",
-    "status": "대기",
-    "url": null,
+    "id": "EoS-Page-2",
+    "type": "EndOfSale",
+    "title": "판매종료 2페이지 처리 중 (페이지 1: 10건 등록 완료, 20 엔트리)",
+    "status": "진행 중",
+    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=2",
     "steps": [
       {
-        "name": "EndOfSale 공지 목록 수집",
+        "name": "페이지 1 (10건) 패키지 등록",
+        "status": "done"
+      },
+      {
+        "name": "페이지 2 (10건) OCR + Notion 등록",
+        "status": "in_progress"
+      },
+      {
+        "name": "페이지 3+ 순차 처리",
         "status": "pending"
       },
       {
-        "name": "배너 다운로드 + OCR 판독",
-        "status": "pending"
-      },
-      {
-        "name": "사용자 확인",
-        "status": "pending"
-      },
-      {
-        "name": "Notion DB 등록",
-        "status": "pending"
-      },
-      {
-        "name": "대시보드 갱신 & 배포",
+        "name": "세부 구성품 후속 보완",
         "status": "pending"
       }
     ],
@@ -2196,11 +2195,74 @@
     "parallel_tasks": []
   },
   "last_ocr_preview": {
-    "id": 605,
-    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과",
-    "confirmed": true,
+    "id": "EoS-Page-1",
+    "title": "판매종료 페이지 1 (594, 597~604, 606) - 판독 결과",
+    "confirmed": false,
     "confirmed_at": "2026-04-22",
-    "summary": "총 24개 아이템 후보 (원더베리 3 + 원더블록 32기 13 + 루나 크리스탈 1 + 루나 쁘띠 7기 6 + 이벤트 보상 1)",
+    "summary": "페이지 1 10건 중: 594 풀 등록(6), 나머지 9건 패키지/가격 레벨 등록(14). 합 20 엔트리. 세부 구성품은 후속 세션 보완 예정.",
+    "endofsale_page1": [
+      {
+        "id": 594,
+        "title": "윈터 부티크 기프트",
+        "period": "2026-01-15 ~ 02-11",
+        "items": "부티크 기프트 3300캐시 + 10개 33000캐시 + 눈꽃 솜사탕(교환재화) + 이벤트 보상 3종"
+      },
+      {
+        "id": 597,
+        "title": "프리미엄 헤어/성형 쿠폰 (2/12)",
+        "period": "상시판매",
+        "items": "프리미엄 헤어 5500캐시, 프리미엄 성형 3500캐시 (남/여 헤어·얼굴 각 10종 미OCR)"
+      },
+      {
+        "id": 598,
+        "title": "메이플 로얄 스타일 - 찍찍이 음악대 세트",
+        "period": "상시판매",
+        "items": "로얄스타일 2200캐시 / 156기 스페셜 세트 구성품 미OCR"
+      },
+      {
+        "id": 599,
+        "title": "보스 컬렉션 패키지",
+        "period": "2026-02-12 ~ 03-18",
+        "items": "보스 헤어 5500캐시, 보스 성형 3500캐시 + 의상 패키지(미OCR)"
+      },
+      {
+        "id": 600,
+        "title": "스페셜 파워 엘릭서 패키지",
+        "period": "2026-02-12 ~ 03-18",
+        "items": "10000캐시 (파워엘릭서 110+보너스 11 + 메이플포인트 교환권 11000)"
+      },
+      {
+        "id": 601,
+        "title": "스페셜 루나 크리스탈 + 쁘띠 방송이 프렌즈",
+        "period": "2026-02-12 ~ 03-18",
+        "items": "루나 크리스탈 3900캐시 + 루나 쁘띠 방송이 프렌즈 세트(펫4+장비) - 구성품 미OCR"
+      },
+      {
+        "id": 602,
+        "title": "장송의 프리렌 굿즈 컬렉션",
+        "period": "2026-02-12 ~ 03-18",
+        "items": "x1 3300캐시, x10 33000캐시 + 굿즈 획득 아이템 9종(미OCR)"
+      },
+      {
+        "id": 603,
+        "title": "장송의 프리렌 코디 컬렉션",
+        "period": "2026-02-12 ~ 03-18",
+        "items": "x1 9900캐시, x10 99000캐시 + 코디 획득 아이템(미OCR)"
+      },
+      {
+        "id": 604,
+        "title": "프리미엄 헤어/성형 쿠폰 (3/19)",
+        "period": "상시판매",
+        "items": "헤어 5500, 성형 3500 (구성품 미OCR)"
+      },
+      {
+        "id": 606,
+        "title": "메이플 로얄 스타일 - 펑키 스타 러버 세트",
+        "period": "상시판매",
+        "items": "로얄스타일 2200캐시 / 155기 스페셜 세트 (구성품 미OCR)"
+      }
+    ],
+    "_legacy_605_summary": "총 24개 아이템 후보 (원더베리 3 + 원더블록 32기 13 + 루나 크리스탈 1 + 루나 쁘띠 7기 6 + 이벤트 보상 1)",
     "categories": [
       {
         "name": "🫐 위습의 원더베리 팩 (3종, 상시판매, HOT)",
@@ -2320,6 +2382,76 @@
   },
   "queue": [],
   "completed": [
+    {
+      "id": 606,
+      "type": "EndOfSale",
+      "title": "로얄 스타일 - 펑키 스타 러버 세트",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 604,
+      "type": "EndOfSale",
+      "title": "프리미엄 헤어/성형 쿠폰 (3/19)",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 603,
+      "type": "EndOfSale",
+      "title": "장송의 프리렌 코디 컬렉션",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 602,
+      "type": "EndOfSale",
+      "title": "장송의 프리렌 굿즈 컬렉션",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 601,
+      "type": "EndOfSale",
+      "title": "스페셜 루나 크리스탈 + 쁘띠 방송이 프렌즈",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 600,
+      "type": "EndOfSale",
+      "title": "스페셜 파워 엘릭서 패키지",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 599,
+      "type": "EndOfSale",
+      "title": "보스 컬렉션 패키지",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 598,
+      "type": "EndOfSale",
+      "title": "로얄 스타일 - 찍찍이 음악대 세트",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 597,
+      "type": "EndOfSale",
+      "title": "프리미엄 헤어/성형 쿠폰 (2/12)",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 594,
+      "type": "EndOfSale",
+      "title": "윈터 부티크 기프트",
+      "items": 6,
+      "completed_at": "2026-04-22"
+    },
     {
       "id": 612,
       "type": "Sale",
