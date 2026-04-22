@@ -151,8 +151,22 @@ fetch('data.json').then(r => r.json()).then(data => {
   if (data.current_task) {
     const ct = data.current_task;
     document.getElementById('current-task-section').classList.remove('hidden');
+    const steps = ct.steps || [];
+    const doneCnt = steps.filter(s => s.status === 'done').length;
+    const totalCnt = steps.length;
+    const pct = totalCnt ? Math.round(doneCnt / totalCnt * 100) : 0;
+    const stepIcon = (status) => {
+      if (status === 'done') return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white text-xs">✓</span>';
+      if (status === 'in_progress') return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-400 text-white text-xs animate-pulse">⋯</span>';
+      return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full border-2 border-slate-300 text-slate-400 text-xs">○</span>';
+    };
+    const stepTextCls = (status) => {
+      if (status === 'done') return 'text-slate-500 line-through';
+      if (status === 'in_progress') return 'text-slate-900 font-semibold';
+      return 'text-slate-500';
+    };
     document.getElementById('current-task').innerHTML = `
-      <div class="flex items-start justify-between gap-3">
+      <div class="flex items-start justify-between gap-3 mb-4">
         <div class="flex-1">
           <div class="flex items-center gap-2 text-xs text-amber-700 mb-1">
             <span class="font-mono">${ct.type}/${ct.id}</span>
@@ -160,11 +174,28 @@ fetch('data.json').then(r => r.json()).then(data => {
             <span class="inline-block px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-semibold">${ct.status}</span>
             <span class="animate-pulse">⏳</span>
           </div>
-          <div class="font-bold text-slate-900 mb-1">${ct.title}</div>
-          <div class="text-sm text-slate-700">📍 ${ct.step}</div>
+          <div class="font-bold text-slate-900">${ct.title}</div>
         </div>
         <a href="${ct.url}" target="_blank" class="text-xs text-indigo-600 hover:underline whitespace-nowrap">원문 ↗</a>
-      </div>`;
+      </div>
+      ${steps.length ? `
+      <div class="mb-3">
+        <div class="flex items-center justify-between text-xs text-slate-600 mb-1">
+          <span>진행률</span>
+          <span class="font-mono">${doneCnt}/${totalCnt} · ${pct}%</span>
+        </div>
+        <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div class="bg-emerald-500 h-2 transition-all" style="width:${pct}%"></div>
+        </div>
+      </div>
+      <ul class="space-y-2 mt-4">
+        ${steps.map((s, i) => `
+          <li class="flex items-center gap-3">
+            ${stepIcon(s.status)}
+            <span class="text-xs text-slate-400 w-6">${String(i+1).padStart(2, '0')}</span>
+            <span class="text-sm ${stepTextCls(s.status)}">${s.name}</span>
+          </li>`).join('')}
+      </ul>` : ''}`;
   }
 
   if (data.queue && data.queue.length) {

@@ -754,9 +754,42 @@
     "id": 612,
     "type": "Sale",
     "title": "4월 16일 캐시아이템 업데이트 - 부티크 기프트",
-    "status": "준비 중",
-    "step": "배너 이미지 다운로드 대기",
-    "url": "https://maplestory.nexon.com/News/CashShop/Sale/612"
+    "status": "진행 중",
+    "url": "https://maplestory.nexon.com/News/CashShop/Sale/612",
+    "steps": [
+      {
+        "name": "원문 공지 확인 & 배너 URL 추출",
+        "status": "done"
+      },
+      {
+        "name": "배너 이미지 다운로드 (content.png)",
+        "status": "done"
+      },
+      {
+        "name": "슬랩 분할 & 섹션 식별",
+        "status": "done"
+      },
+      {
+        "name": "HD 섹션 크롭 생성",
+        "status": "done"
+      },
+      {
+        "name": "OCR 판독으로 아이템명 확정",
+        "status": "in_progress"
+      },
+      {
+        "name": "Notion DB 아이템 등록",
+        "status": "pending"
+      },
+      {
+        "name": "검증 표 출력 & 오타 확인",
+        "status": "pending"
+      },
+      {
+        "name": "대시보드 data.json 갱신 & 배포",
+        "status": "pending"
+      }
+    ]
   },
   "queue": [
     {
