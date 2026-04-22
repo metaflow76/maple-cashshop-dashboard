@@ -1498,38 +1498,30 @@
     "total_items_registered": 248
   },
   "current_task": {
-    "id": 596,
-    "type": "Sale",
-    "title": "Sale/596 초이스 헤어/성형 쿠폰",
-    "status": "대기",
-    "url": "https://maplestory.nexon.com/News/CashShop/Sale/596",
+    "id": null,
+    "type": "ParallelBatch",
+    "title": "병렬 처리 중: Sale/596, 595, 560 (OCR 판독 단계까지 동시 진행)",
+    "status": "진행 중",
+    "url": null,
     "steps": [
       {
-        "name": "원문 공지 확인 & 배너 URL 추출",
+        "name": "3개 공지 원문 확인 & 배너 URL 추출",
+        "status": "in_progress"
+      },
+      {
+        "name": "3개 공지 배너 다운로드 + 슬랩/HD 크롭",
+        "status": "in_progress"
+      },
+      {
+        "name": "3개 공지 OCR 판독",
+        "status": "in_progress"
+      },
+      {
+        "name": "사용자 일괄 확인 (오타/카테고리)",
         "status": "pending"
       },
       {
-        "name": "배너 이미지 다운로드 (content.png)",
-        "status": "pending"
-      },
-      {
-        "name": "슬랩 분할 & 섹션 식별",
-        "status": "pending"
-      },
-      {
-        "name": "HD 섹션 크롭 생성",
-        "status": "pending"
-      },
-      {
-        "name": "OCR 판독으로 아이템명 확정",
-        "status": "pending"
-      },
-      {
-        "name": "Notion DB 아이템 등록",
-        "status": "pending"
-      },
-      {
-        "name": "검증 표 출력 & 오타 확인",
+        "name": "Notion DB 일괄 등록",
         "status": "pending"
       },
       {
@@ -1537,7 +1529,24 @@
         "status": "pending"
       }
     ],
-    "ocr_results": null
+    "ocr_results": null,
+    "parallel_tasks": [
+      {
+        "id": 596,
+        "title": "초이스 헤어/성형 쿠폰",
+        "status": "OCR 진행 중"
+      },
+      {
+        "id": 595,
+        "title": "성별 변경 쿠폰",
+        "status": "OCR 진행 중"
+      },
+      {
+        "id": 560,
+        "title": "스타일링 스타터 패키지",
+        "status": "OCR 진행 중"
+      }
+    ]
   },
   "last_ocr_preview": {
     "id": 605,
