@@ -1316,33 +1316,33 @@
   "current_task": {
     "id": 605,
     "type": "Sale",
-    "title": "Sale/605 원더베리/루나크리스탈",
-    "status": "대기",
+    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈",
+    "status": "진행 중",
     "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
     "steps": [
       {
         "name": "원문 공지 확인 & 배너 URL 추출",
-        "status": "pending"
+        "status": "completed"
       },
       {
         "name": "배너 이미지 다운로드 (content.png)",
-        "status": "pending"
+        "status": "completed"
       },
       {
         "name": "슬랩 분할 & 섹션 식별",
-        "status": "pending"
+        "status": "completed"
       },
       {
         "name": "HD 섹션 크롭 생성",
-        "status": "pending"
+        "status": "completed"
       },
       {
         "name": "OCR 판독으로 아이템명 확정",
-        "status": "pending"
+        "status": "completed"
       },
       {
         "name": "Notion DB 아이템 등록",
-        "status": "pending"
+        "status": "in_progress"
       },
       {
         "name": "검증 표 출력 & 오타 확인",
@@ -1356,20 +1356,122 @@
     "ocr_results": null
   },
   "last_ocr_preview": {
-    "id": 607,
-    "title": "Sale/607 추가옵션/잠재능력 전승 스크롤 - 판독 결과",
-    "confirmed": true,
-    "confirmed_at": "2026-04-22",
-    "summary": "2개 주문서 아이템 (상시판매 · 1회 교환, 유효 30일)",
+    "id": 605,
+    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과 (사용자 확인 대기)",
+    "confirmed": false,
+    "confirmed_at": null,
+    "summary": "총 24개 아이템 후보 (원더베리 3 + 원더블록 32기 13 + 루나 크리스탈 1 + 루나 쁘띠 7기 6 + 이벤트 보상 1)",
     "categories": [
       {
-        "name": "📜 전승 스크롤 (주문서 2종)",
+        "name": "🫐 위습의 원더베리 팩 (3종, 상시판매, HOT)",
         "subcategories": [
           {
-            "name": "상시판매",
+            "name": "패키지",
             "items": [
-              "추가옵션 전승 스크롤 (49,000 캐시)",
-              "잠재능력 전승 스크롤 (99,000 캐시)"
+              "위습의 원더베리 (5,400 캐시)",
+              "위습의 원더베리 11개 (59,400 → 54,000 캐시)",
+              "위습의 원더베리 스페셜 프라이스 팩 (113,400 → 100,000 캐시, 넥슨쇼핑 한정)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🧸 원더 블럭 32기 - 복슬 프렌즈 세트 (NEW, 멀티펫 90일)",
+        "subcategories": [
+          {
+            "name": "펫 3종",
+            "items": [
+              "프링",
+              "레용",
+              "주니"
+            ]
+          },
+          {
+            "name": "펫 장비 3종 (각 7,900 캐시)",
+            "items": [
+              "프링의 설탕",
+              "레용의 방울",
+              "주니의 꽃잎"
+            ]
+          },
+          {
+            "name": "소비재",
+            "items": [
+              "오가닉 원더 쿠키 10개",
+              "고농축 프리미엄 생명의 물"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🍰 원더 블럭 32기 - 달콤한 롤케익 세트 (멀티펫 90일)",
+        "subcategories": [
+          {
+            "name": "펫 3종",
+            "items": [
+              "밀크롤",
+              "딸기롤",
+              "그린롤"
+            ]
+          },
+          {
+            "name": "추가 멀티펫",
+            "items": [
+              "식빵이",
+              "마롱이"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🌙 루나 크리스탈 (상시판매, HOT)",
+        "subcategories": [
+          {
+            "name": "패키지",
+            "items": [
+              "루나 크리스탈 (3,900 캐시)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "❄️ 루나 쁘띠 7기 - 쁘띠 스노우 세트 (멀티펫 90일)",
+        "subcategories": [
+          {
+            "name": "펫 3종",
+            "items": [
+              "카이",
+              "아델레",
+              "쁘띠 스노우"
+            ]
+          },
+          {
+            "name": "공용 펫 장비",
+            "items": [
+              "루나 크리스탈 키"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🧊 루나 쁘띠 7기 - 쁘띠 스노우 펫 장비 (NEW, 상시판매)",
+        "subcategories": [
+          {
+            "name": "펫 장비 2종 (각 15,900 캐시)",
+            "items": [
+              "냉기의 얼음누각 (카이/아델레용)",
+              "스노우 아이스 (쁘띠 스노우용)"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🎁 이벤트 - 눈 내리는 왕국으로의 초대 (월드별 1회 진행)",
+        "subcategories": [
+          {
+            "name": "이벤트 보상",
+            "items": [
+              "스노우 캐슬 (의자)"
             ]
           }
         ]
