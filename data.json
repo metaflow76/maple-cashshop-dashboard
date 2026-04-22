@@ -2161,29 +2161,33 @@
   "progress": {
     "total_planned_sale": 100,
     "completed_sale": 17,
-    "completed_endofsale": 10,
+    "completed_endofsale": 20,
     "total_endofsale_notices": 584,
-    "current_endofsale_page": 2,
+    "current_endofsale_page": 3,
     "total_endofsale_pages": 59,
-    "total_items_registered": 363
+    "total_items_registered": 383
   },
   "current_task": {
-    "id": "EoS-Page-2",
+    "id": "EoS-Page-3",
     "type": "EndOfSale",
-    "title": "판매종료 2페이지 처리 중 (페이지 1: 10건 등록 완료, 20 엔트리)",
+    "title": "판매종료 3페이지 처리 중 (페이지 1-2: 20건 등록 완료, 40 엔트리)",
     "status": "진행 중",
-    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=2",
+    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=3",
     "steps": [
       {
         "name": "페이지 1 (10건) 패키지 등록",
         "status": "done"
       },
       {
-        "name": "페이지 2 (10건) OCR + Notion 등록",
+        "name": "페이지 2 (10건) 패키지 등록",
+        "status": "done"
+      },
+      {
+        "name": "페이지 3 (10건) OCR + Notion 등록",
         "status": "in_progress"
       },
       {
-        "name": "페이지 3+ 순차 처리",
+        "name": "페이지 4+ 순차 처리",
         "status": "pending"
       },
       {
@@ -2382,6 +2386,76 @@
   },
   "queue": [],
   "completed": [
+    {
+      "id": 593,
+      "type": "EndOfSale",
+      "title": "2025 하반기 BEST 프리미엄 뷰티 쿠폰",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 592,
+      "type": "EndOfSale",
+      "title": "로얄 스타일 - 오로라 카레이서 세트",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 591,
+      "type": "EndOfSale",
+      "title": "보스 컬렉션 + 찬란한 홍성 패키지 (수정)",
+      "items": 3,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 590,
+      "type": "EndOfSale",
+      "title": "코디 패키지 업데이트 - 나이트 매지션",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 589,
+      "type": "EndOfSale",
+      "title": "프리미엄 헤어/성형 쿠폰 (1/15)",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 588,
+      "type": "EndOfSale",
+      "title": "챌린저스 EXP 듀오 이용권",
+      "items": 1,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 587,
+      "type": "EndOfSale",
+      "title": "일러스트 컬렉션: 프렌즈 월드 & 초월자 & 아니마",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 586,
+      "type": "EndOfSale",
+      "title": "일러스트 컬렉션: 노바 & 레프",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 585,
+      "type": "EndOfSale",
+      "title": "일러스트 컬렉션: 데몬 & 레지스탕스",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 584,
+      "type": "EndOfSale",
+      "title": "일러스트 컬렉션: 시그너스 & 영웅",
+      "items": 2,
+      "completed_at": "2026-04-22"
+    },
     {
       "id": 606,
       "type": "EndOfSale",
