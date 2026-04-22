@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "메이플스토리 캐시샵 DB 대시보드",
+    "notion_db_url": "https://www.notion.so/7d466f34c12349c2a6ed036993e3cb20",
+    "generated_at": "2026-04-22",
+    "generated_by": "Claude Opus 4.7"
+  },
+  "sales": [
+    {
+      "id": 611,
+      "type": "Sale",
+      "title": "4월 16일 캐시아이템 업데이트 - 흑발/백안 로얄스타일 쿠폰",
+      "date": "2026-04-16",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/611",
+      "packages": [
+        {
+          "name": "흑발 헤어 쿠폰",
+          "label": null,
+          "price": 20000,
+          "unit": "캐시",
+          "note": "메일링지 사용 가능 / 30일 이적 사용 가능. 남자/여자 흑발 헤어 스타일 중 선택",
+          "items_count": 22
+        },
+        {
+          "name": "백안 성형 쿠폰",
+          "label": null,
+          "price": 15000,
+          "unit": "캐시",
+          "note": "메일링지 사용 가능 / 30일 이적 사용 가능. 남자/여자 백안 성형 스타일 중 선택",
+          "items_count": 22
+        },
+        {
+          "name": "흑발 가발 쿠폰",
+          "label": null,
+          "price": 15000,
+          "unit": "캐시",
+          "note": "영구. 남자/여자 흑발 가발 스타일 중 선택",
+          "items_count": 20
+        },
+        {
+          "name": "백안 얼굴장식 쿠폰",
+          "label": null,
+          "price": 10000,
+          "unit": "캐시",
+          "note": "영구. 남자/여자 백안 얼굴장식 스타일 중 선택",
+          "items_count": 20
+        }
+      ],
+      "events": []
+    },
+    {
+      "id": 610,
+      "type": "Sale",
+      "title": "4월 16일 캐시아이템 업데이트 - 로얄스타일 쿠폰 & 마스터피스",
+      "date": "2026-04-16",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/610",
+      "packages": [
+        {
+          "name": "메이플 로얄 스타일",
+          "label": "HOT",
+          "price": 2200,
+          "unit": "캐시",
+          "note": "7일 이내 사용 가능, 상시 판매",
+          "items_count": 12
+        },
+        {
+          "name": "솔 스티드 세트",
+          "label": "156기 스페셜",
+          "price": null,
+          "unit": null,
+          "note": "156기 스페셜 라벨, 수집 이벤트 포함",
+          "items_count": 9
+        },
+        {
+          "name": "마스터피스",
+          "label": null,
+          "price": 900,
+          "unit": "캐시",
+          "note": "상시 판매",
+          "items_count": 0
+        },
+        {
+          "name": "프리미엄 마스터피스",
+          "label": null,
+          "price": 1900,
+          "unit": "캐시",
+          "note": "상시 판매",
+          "items_count": 0
+        },
+        {
+          "name": "마스터 수호령 세트",
+          "label": "마스터라벨 19기",
+          "price": null,
+          "unit": null,
+          "note": "마스터라벨 19기, 수집 이벤트 포함",
+          "items_count": 10
+        }
+      ],
+      "events": [
+        {
+          "name": "솔 스티드 세트 수집 이벤트",
+          "reward_count": 1
+        },
+        {
+          "name": "마스터피스 19기 헤어 이벤트",
+          "reward_count": 2
+        },
+        {
+          "name": "마스터피스 19기 의상 수집 이벤트",
+          "reward_count": 2
+        },
+        {
+          "name": "빛나는 여우 보물 수집 이벤트",
+          "reward_count": 1
+        },
+        {
+          "name": "영롱한 여우 보물 수집 이벤트",
+          "reward_count": 1
+        }
+      ]
+    }
+  ],
+  "progress": {
+    "total_planned_sale": 100,
+    "completed_sale": 2,
+    "completed_endofsale": 0,
+    "total_items_registered": 127
+  }
+}
+</content>
+</invoke>
