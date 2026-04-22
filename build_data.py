@@ -174,6 +174,24 @@ sale_611_packages = [
      "items": items_for("백안 얼굴장식 쿠폰", sale_611_components)},
 ]
 
+sale_612_packages = [
+    {"name": "부티크 기프트", "label": None, "price": 3300, "unit": "캐시",
+     "note": "넥슨캐시로만 구매 / 7일 이내 사용 / 1회 교환 가능",
+     "items": []},
+    {"name": "부티크 기프트 10개", "label": None, "price": 33000, "unit": "캐시",
+     "note": "10개 묶음 / 10번 사용 시마다 파바타임 (2배 획득)",
+     "items": []},
+]
+
+sale_612_events = [
+    {"name": "부티크 기프트 30회 사용 이벤트", "rewards": [
+        {"name": "별낭이 상자 라이딩 교환권", "part": "의자", "note": "월드 내 캐릭터 이동 가능, 영구"},
+    ]},
+    {"name": "부티크 기프트 50회 사용 이벤트", "rewards": [
+        {"name": "포근포슬 말풍선/명찰 반지 교환권", "part": "쿠폰", "note": "영구, 획득 의상 교환 불가"},
+    ]},
+]
+
 sale_610_packages = [
     {"name": "메이플 로얄 스타일", "label": "HOT", "price": 2200, "unit": "캐시",
      "note": "7일 이내 사용 가능, 상시 판매",
@@ -199,6 +217,14 @@ data = {
     },
     "sales": [
         {
+            "id": 612, "type": "Sale",
+            "title": "4월 16일 캐시아이템 업데이트 - 부티크 기프트",
+            "date": "2026-04-16", "status": "판매중",
+            "url": "https://maplestory.nexon.com/News/CashShop/Sale/612",
+            "packages": sale_612_packages,
+            "events": sale_612_events,
+        },
+        {
             "id": 611, "type": "Sale",
             "title": "4월 16일 캐시아이템 업데이트 - 흑발/백안 로얄스타일 쿠폰",
             "date": "2026-04-16", "status": "판매중",
@@ -217,36 +243,40 @@ data = {
     ],
     "progress": {
         "total_planned_sale": 100,
-        "completed_sale": 2,
+        "completed_sale": 3,
         "completed_endofsale": 0,
-        "total_items_registered": 131,
+        "total_items_registered": 135,
     },
     "current_task": {
-        "id": 612,
+        "id": 609,
         "type": "Sale",
-        "title": "4월 16일 캐시아이템 업데이트 - 부티크 기프트",
-        "status": "진행 중",
-        "url": "https://maplestory.nexon.com/News/CashShop/Sale/612",
+        "title": "4월 16일 캐시아이템 업데이트 - 프리미엄 헤어 & 성형 쿠폰",
+        "status": "준비 중",
+        "url": "https://maplestory.nexon.com/News/CashShop/Sale/609",
         "steps": [
-            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "done"},
-            {"name": "배너 이미지 다운로드 (content.png)", "status": "done"},
-            {"name": "슬랩 분할 & 섹션 식별", "status": "done"},
-            {"name": "HD 섹션 크롭 생성", "status": "done"},
-            {"name": "OCR 판독으로 아이템명 확정", "status": "in_progress"},
+            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "pending"},
+            {"name": "배너 이미지 다운로드 (content.png)", "status": "pending"},
+            {"name": "슬랩 분할 & 섹션 식별", "status": "pending"},
+            {"name": "HD 섹션 크롭 생성", "status": "pending"},
+            {"name": "OCR 판독으로 아이템명 확정", "status": "pending"},
             {"name": "Notion DB 아이템 등록", "status": "pending"},
             {"name": "검증 표 출력 & 오타 확인", "status": "pending"},
             {"name": "대시보드 data.json 갱신 & 배포", "status": "pending"},
         ],
     },
     "queue": [
-        {"id": 612, "type": "Sale", "title": "부티크 기프트", "status": "진행 중"},
-        {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "status": "대기"},
+        {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "status": "진행 중"},
         {"id": 608, "type": "Sale", "title": "진 테마 아이템", "status": "대기"},
         {"id": 607, "type": "Sale", "title": "강화/능력치 주문서", "status": "대기"},
         {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "대기"},
         {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "대기"},
         {"id": 595, "type": "Sale", "title": "성별 변경 쿠폰", "status": "대기"},
         {"id": 560, "type": "Sale", "title": "스타일링 스타터 패키지", "status": "대기"},
+    ],
+    "completed": [
+        {"id": 612, "type": "Sale", "title": "부티크 기프트", "items": 4, "completed_at": "2026-04-22"},
+        {"id": 611, "type": "Sale", "title": "흑발/백안 로얄스타일 쿠폰", "items": 88, "completed_at": "2026-04-22"},
+        {"id": 610, "type": "Sale", "title": "로얄스타일 쿠폰 & 마스터피스", "items": 43, "completed_at": "2026-04-22"},
     ],
 }
 

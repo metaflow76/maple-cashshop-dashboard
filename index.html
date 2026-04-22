@@ -46,6 +46,11 @@
     <div id="queue" class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"></div>
   </section>
 
+  <section id="completed-section" class="mb-8 hidden">
+    <h2 class="text-xl font-bold mb-3">✅ 완료 이력</h2>
+    <div id="completed" class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"></div>
+  </section>
+
   <section class="mb-8">
     <div class="flex items-center justify-between mb-3">
       <h2 class="text-xl font-bold">판매 공지</h2>
@@ -196,6 +201,32 @@ fetch('data.json').then(r => r.json()).then(data => {
             <span class="text-sm ${stepTextCls(s.status)}">${s.name}</span>
           </li>`).join('')}
       </ul>` : ''}`;
+  }
+
+  if (data.completed && data.completed.length) {
+    document.getElementById('completed-section').classList.remove('hidden');
+    document.getElementById('completed').innerHTML = `
+      <table class="w-full text-sm">
+        <thead class="text-xs text-slate-500 bg-slate-50">
+          <tr>
+            <th class="text-left px-4 py-2 font-medium w-16">#</th>
+            <th class="text-left px-4 py-2 font-medium w-24">공지</th>
+            <th class="text-left px-4 py-2 font-medium">제목</th>
+            <th class="text-right px-4 py-2 font-medium w-24">아이템</th>
+            <th class="text-left px-4 py-2 font-medium w-28">완료일</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.completed.map((c, i) => `
+            <tr class="border-t border-slate-100">
+              <td class="px-4 py-2 text-emerald-600">✓</td>
+              <td class="px-4 py-2 font-mono text-xs">${c.type}/${c.id}</td>
+              <td class="px-4 py-2">${c.title}</td>
+              <td class="px-4 py-2 text-right font-mono text-xs text-slate-600">${c.items}</td>
+              <td class="px-4 py-2 text-xs text-slate-500">${c.completed_at}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>`;
   }
 
   if (data.queue && data.queue.length) {
