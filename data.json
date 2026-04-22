@@ -2161,25 +2161,25 @@
   "progress": {
     "total_planned_sale": 100,
     "completed_sale": 17,
-    "completed_endofsale": 279,
+    "completed_endofsale": 289,
     "total_endofsale_notices": 584,
-    "current_endofsale_page": 29,
+    "current_endofsale_page": 30,
     "total_endofsale_pages": 59,
-    "total_items_registered": 1060
+    "total_items_registered": 1094
   },
   "current_task": {
-    "id": "EoS-Page-29",
+    "id": "EoS-Page-30",
     "type": "EndOfSale",
-    "title": "판매종료 29페이지 처리 중 (페이지 1-28: 279건 등록 완료, 717 엔트리)",
+    "title": "판매종료 30페이지 처리 중 (페이지 1-29: 289건 등록 완료, 751 엔트리)",
     "status": "진행 중",
-    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=29",
+    "url": "https://maplestory.nexon.com/News/CashShop/EndOfSale?page=30",
     "steps": [
       {
-        "name": "페이지 1-28 (279건) 패키지 등록",
+        "name": "페이지 1-29 (289건) 패키지 등록",
         "status": "done"
       },
       {
-        "name": "페이지 29+ 순차 처리",
+        "name": "페이지 30+ 순차 처리",
         "status": "in_progress"
       },
       {
