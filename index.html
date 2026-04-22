@@ -36,6 +36,16 @@
     <div id="progress" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
   </section>
 
+  <section id="current-task-section" class="mb-8 hidden">
+    <h2 class="text-xl font-bold mb-3">🛠️ 진행 중 작업</h2>
+    <div id="current-task" class="bg-amber-50 border border-amber-200 rounded-lg p-4"></div>
+  </section>
+
+  <section id="queue-section" class="mb-8 hidden">
+    <h2 class="text-xl font-bold mb-3">📋 작업 대기열</h2>
+    <div id="queue" class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"></div>
+  </section>
+
   <section class="mb-8">
     <div class="flex items-center justify-between mb-3">
       <h2 class="text-xl font-bold">판매 공지</h2>
@@ -137,6 +147,53 @@ fetch('data.json').then(r => r.json()).then(data => {
       <div class="text-xs text-slate-500 mb-1">${s.label}</div>
       <div class="text-2xl font-bold text-${s.color}-600">${s.value}</div>
     </div>`).join('');
+
+  if (data.current_task) {
+    const ct = data.current_task;
+    document.getElementById('current-task-section').classList.remove('hidden');
+    document.getElementById('current-task').innerHTML = `
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex-1">
+          <div class="flex items-center gap-2 text-xs text-amber-700 mb-1">
+            <span class="font-mono">${ct.type}/${ct.id}</span>
+            <span>·</span>
+            <span class="inline-block px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-semibold">${ct.status}</span>
+            <span class="animate-pulse">⏳</span>
+          </div>
+          <div class="font-bold text-slate-900 mb-1">${ct.title}</div>
+          <div class="text-sm text-slate-700">📍 ${ct.step}</div>
+        </div>
+        <a href="${ct.url}" target="_blank" class="text-xs text-indigo-600 hover:underline whitespace-nowrap">원문 ↗</a>
+      </div>`;
+  }
+
+  if (data.queue && data.queue.length) {
+    document.getElementById('queue-section').classList.remove('hidden');
+    document.getElementById('queue').innerHTML = `
+      <table class="w-full text-sm">
+        <thead class="text-xs text-slate-500 bg-slate-50">
+          <tr>
+            <th class="text-left px-4 py-2 font-medium w-16">#</th>
+            <th class="text-left px-4 py-2 font-medium w-24">공지</th>
+            <th class="text-left px-4 py-2 font-medium">제목</th>
+            <th class="text-left px-4 py-2 font-medium w-24">상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${data.queue.map((q, i) => {
+            const isActive = q.status === '진행 중';
+            const badgeCls = isActive ? 'bg-amber-100 text-amber-700' : 'bg-slate-100 text-slate-500';
+            return `
+              <tr class="border-t border-slate-100 ${isActive ? 'bg-amber-50' : ''}">
+                <td class="px-4 py-2 text-slate-400">${i+1}</td>
+                <td class="px-4 py-2 font-mono text-xs">${q.type}/${q.id}</td>
+                <td class="px-4 py-2">${q.title}</td>
+                <td class="px-4 py-2"><span class="text-xs px-2 py-0.5 rounded ${badgeCls}">${q.status}</span></td>
+              </tr>`;
+          }).join('')}
+        </tbody>
+      </table>`;
+  }
 
   document.getElementById('sales').innerHTML = data.sales.map(sale => {
     const totalItems = sale.packages.reduce((acc, pk) => acc + (pk.items?.length || 0), 0);

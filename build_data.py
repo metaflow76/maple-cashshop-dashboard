@@ -221,6 +221,24 @@ data = {
         "completed_endofsale": 0,
         "total_items_registered": 131,
     },
+    "current_task": {
+        "id": 612,
+        "type": "Sale",
+        "title": "4월 16일 캐시아이템 업데이트 - 부티크 기프트",
+        "status": "준비 중",
+        "step": "배너 이미지 다운로드 대기",
+        "url": "https://maplestory.nexon.com/News/CashShop/Sale/612",
+    },
+    "queue": [
+        {"id": 612, "type": "Sale", "title": "부티크 기프트", "status": "진행 중"},
+        {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "status": "대기"},
+        {"id": 608, "type": "Sale", "title": "진 테마 아이템", "status": "대기"},
+        {"id": 607, "type": "Sale", "title": "강화/능력치 주문서", "status": "대기"},
+        {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "대기"},
+        {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "대기"},
+        {"id": 595, "type": "Sale", "title": "성별 변경 쿠폰", "status": "대기"},
+        {"id": 560, "type": "Sale", "title": "스타일링 스타터 패키지", "status": "대기"},
+    ],
 }
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
