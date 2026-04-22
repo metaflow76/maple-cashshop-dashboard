@@ -1305,44 +1305,228 @@
         }
       ],
       "events": []
+    },
+    {
+      "id": 605,
+      "type": "Sale",
+      "title": "3월 19일 위습의 원더베리 업데이트 & 원더풀 위크",
+      "date": "2026-03-19",
+      "status": "판매중",
+      "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
+      "packages": [
+        {
+          "name": "위습의 원더베리",
+          "label": null,
+          "price": 5400,
+          "unit": "캐시",
+          "note": "상시판매 · 7일 이내 사용 · 마일리지 사용 불가",
+          "items": []
+        },
+        {
+          "name": "위습의 원더베리 11개",
+          "label": null,
+          "price": 54000,
+          "unit": "캐시",
+          "note": "스페셜 프라이스 (정가 59,400) · 상시판매",
+          "items": []
+        },
+        {
+          "name": "위습의 원더베리 스페셜 프라이스 팩",
+          "label": null,
+          "price": 100000,
+          "unit": "캐시",
+          "note": "정가 113,400 · 넥슨쇼핑 한정 · 원더베리 22개 포함",
+          "items": []
+        },
+        {
+          "name": "복슬 프렌즈 세트",
+          "label": null,
+          "price": null,
+          "unit": null,
+          "note": "원더 블랙 32기 · 펫 3 + 펫 장비 3 (각 7,900) + 펫 먹이/소비 2",
+          "items": [
+            {
+              "name": "프링",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "레옹",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "주니",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "프링의 설탕",
+              "part": "펫 장비",
+              "note": "7,900 캐시"
+            },
+            {
+              "name": "레옹의 방울",
+              "part": "펫 장비",
+              "note": "7,900 캐시"
+            },
+            {
+              "name": "주니의 꽃잎",
+              "part": "펫 장비",
+              "note": "7,900 캐시"
+            },
+            {
+              "name": "오가닉 원더 쿠키 10개",
+              "part": "펫 먹이",
+              "note": ""
+            },
+            {
+              "name": "고농축 프리미엄 생명의 물",
+              "part": "펫 소비",
+              "note": ""
+            }
+          ]
+        },
+        {
+          "name": "달콤한 롤케익 세트",
+          "label": null,
+          "price": null,
+          "unit": null,
+          "note": "원더 블랙 32기 · 펫 3 + 추가 멀티펫 2",
+          "items": [
+            {
+              "name": "밀크롤",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "딸기롤",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "그린롤",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "식빵이",
+              "part": "펫",
+              "note": "추가 멀티펫"
+            },
+            {
+              "name": "마롱이",
+              "part": "펫",
+              "note": "추가 멀티펫"
+            }
+          ]
+        },
+        {
+          "name": "루나 크리스탈",
+          "label": null,
+          "price": 3900,
+          "unit": "캐시",
+          "note": "상시판매 · 마일리지 사용 불가",
+          "items": []
+        },
+        {
+          "name": "쁘띠 스노우 세트",
+          "label": null,
+          "price": null,
+          "unit": null,
+          "note": "루나 쁘띠 7기 · 펫 3 + 공용 펫 장비 1",
+          "items": [
+            {
+              "name": "카이",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "아델레",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "쁘띠 스노우",
+              "part": "펫",
+              "note": ""
+            },
+            {
+              "name": "루나 크리스탈 키",
+              "part": "펫 장비",
+              "note": "공용"
+            }
+          ]
+        },
+        {
+          "name": "쁘띠 스노우 펫 장비",
+          "label": null,
+          "price": 15900,
+          "unit": "캐시",
+          "note": "냉기의 얼음누각 (카이/아델레용), 스노우 아이스 (쁘띠 스노우용) · 각 15,900",
+          "items": []
+        }
+      ],
+      "events": [
+        {
+          "name": "눈 내리는 왕국으로의 초대 (루나 쁘띠 7기 수집이벤트)",
+          "rewards": [
+            {
+              "name": "스노우 캐슬",
+              "part": "의자",
+              "note": "월드별 1회 진행 · 루나 쁘띠 펫과 함께 앉을 수 있는 의자"
+            }
+          ]
+        },
+        {
+          "name": "원더풀 위크 (2026-03-19 점검 후 ~ 2026-03-26 09:59)",
+          "rewards": [
+            {
+              "name": "원더블록 획득 확률 20% 상승",
+              "part": "이벤트",
+              "note": "위습의 원더베리 사용 시 적용"
+            }
+          ]
+        }
+      ]
     }
   ],
   "progress": {
     "total_planned_sale": 100,
-    "completed_sale": 6,
+    "completed_sale": 7,
     "completed_endofsale": 0,
-    "total_items_registered": 224
+    "total_items_registered": 248
   },
   "current_task": {
-    "id": 605,
+    "id": 596,
     "type": "Sale",
-    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈",
-    "status": "진행 중",
-    "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
+    "title": "Sale/596 초이스 헤어/성형 쿠폰",
+    "status": "대기",
+    "url": "https://maplestory.nexon.com/News/CashShop/Sale/596",
     "steps": [
       {
         "name": "원문 공지 확인 & 배너 URL 추출",
-        "status": "completed"
+        "status": "pending"
       },
       {
         "name": "배너 이미지 다운로드 (content.png)",
-        "status": "completed"
+        "status": "pending"
       },
       {
         "name": "슬랩 분할 & 섹션 식별",
-        "status": "completed"
+        "status": "pending"
       },
       {
         "name": "HD 섹션 크롭 생성",
-        "status": "completed"
+        "status": "pending"
       },
       {
         "name": "OCR 판독으로 아이템명 확정",
-        "status": "completed"
+        "status": "pending"
       },
       {
         "name": "Notion DB 아이템 등록",
-        "status": "in_progress"
+        "status": "pending"
       },
       {
         "name": "검증 표 출력 & 오타 확인",
@@ -1357,9 +1541,9 @@
   },
   "last_ocr_preview": {
     "id": 605,
-    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과 (사용자 확인 대기)",
-    "confirmed": false,
-    "confirmed_at": null,
+    "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과",
+    "confirmed": true,
+    "confirmed_at": "2026-04-22",
     "summary": "총 24개 아이템 후보 (원더베리 3 + 원더블록 32기 13 + 루나 크리스탈 1 + 루나 쁘띠 7기 6 + 이벤트 보상 1)",
     "categories": [
       {
@@ -1480,16 +1664,10 @@
   },
   "queue": [
     {
-      "id": 605,
-      "type": "Sale",
-      "title": "원더베리/루나크리스탈",
-      "status": "진행 중"
-    },
-    {
       "id": 596,
       "type": "Sale",
       "title": "초이스 헤어/성형 쿠폰",
-      "status": "대기"
+      "status": "진행 중"
     },
     {
       "id": 595,
@@ -1545,6 +1723,13 @@
       "type": "Sale",
       "title": "추가옵션/잠재능력 전승 스크롤",
       "items": 2,
+      "completed_at": "2026-04-22"
+    },
+    {
+      "id": 605,
+      "type": "Sale",
+      "title": "위습의 원더베리 & 루나 크리스탈",
+      "items": 24,
       "completed_at": "2026-04-22"
     }
   ]

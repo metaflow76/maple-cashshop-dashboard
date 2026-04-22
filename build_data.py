@@ -316,6 +316,61 @@ sale_608_events = [
     ]},
 ]
 
+sale_605_components = [
+    # 복슬 프렌즈 세트 (원더 블랙 32기)
+    ("복슬 프렌즈 세트", "프링", "펫", ""),
+    ("복슬 프렌즈 세트", "레옹", "펫", ""),
+    ("복슬 프렌즈 세트", "주니", "펫", ""),
+    ("복슬 프렌즈 세트", "프링의 설탕", "펫 장비", "7,900 캐시"),
+    ("복슬 프렌즈 세트", "레옹의 방울", "펫 장비", "7,900 캐시"),
+    ("복슬 프렌즈 세트", "주니의 꽃잎", "펫 장비", "7,900 캐시"),
+    ("복슬 프렌즈 세트", "오가닉 원더 쿠키 10개", "펫 먹이", ""),
+    ("복슬 프렌즈 세트", "고농축 프리미엄 생명의 물", "펫 소비", ""),
+    # 달콤한 롤케익 세트 (원더 블랙 32기)
+    ("달콤한 롤케익 세트", "밀크롤", "펫", ""),
+    ("달콤한 롤케익 세트", "딸기롤", "펫", ""),
+    ("달콤한 롤케익 세트", "그린롤", "펫", ""),
+    ("달콤한 롤케익 세트", "식빵이", "펫", "추가 멀티펫"),
+    ("달콤한 롤케익 세트", "마롱이", "펫", "추가 멀티펫"),
+    # 쁘띠 스노우 세트 (루나 쁘띠 7기)
+    ("쁘띠 스노우 세트", "카이", "펫", ""),
+    ("쁘띠 스노우 세트", "아델레", "펫", ""),
+    ("쁘띠 스노우 세트", "쁘띠 스노우", "펫", ""),
+    ("쁘띠 스노우 세트", "루나 크리스탈 키", "펫 장비", "공용"),
+]
+
+sale_605_packages = [
+    {"name": "위습의 원더베리", "label": None, "price": 5400, "unit": "캐시",
+     "note": "상시판매 · 7일 이내 사용 · 마일리지 사용 불가", "items": []},
+    {"name": "위습의 원더베리 11개", "label": None, "price": 54000, "unit": "캐시",
+     "note": "스페셜 프라이스 (정가 59,400) · 상시판매", "items": []},
+    {"name": "위습의 원더베리 스페셜 프라이스 팩", "label": None, "price": 100000, "unit": "캐시",
+     "note": "정가 113,400 · 넥슨쇼핑 한정 · 원더베리 22개 포함", "items": []},
+    {"name": "복슬 프렌즈 세트", "label": None, "price": None, "unit": None,
+     "note": "원더 블랙 32기 · 펫 3 + 펫 장비 3 (각 7,900) + 펫 먹이/소비 2",
+     "items": items_for("복슬 프렌즈 세트", sale_605_components)},
+    {"name": "달콤한 롤케익 세트", "label": None, "price": None, "unit": None,
+     "note": "원더 블랙 32기 · 펫 3 + 추가 멀티펫 2",
+     "items": items_for("달콤한 롤케익 세트", sale_605_components)},
+    {"name": "루나 크리스탈", "label": None, "price": 3900, "unit": "캐시",
+     "note": "상시판매 · 마일리지 사용 불가", "items": []},
+    {"name": "쁘띠 스노우 세트", "label": None, "price": None, "unit": None,
+     "note": "루나 쁘띠 7기 · 펫 3 + 공용 펫 장비 1",
+     "items": items_for("쁘띠 스노우 세트", sale_605_components)},
+    {"name": "쁘띠 스노우 펫 장비", "label": None, "price": 15900, "unit": "캐시",
+     "note": "냉기의 얼음누각 (카이/아델레용), 스노우 아이스 (쁘띠 스노우용) · 각 15,900",
+     "items": []},
+]
+
+sale_605_events = [
+    {"name": "눈 내리는 왕국으로의 초대 (루나 쁘띠 7기 수집이벤트)", "rewards": [
+        {"name": "스노우 캐슬", "part": "의자", "note": "월드별 1회 진행 · 루나 쁘띠 펫과 함께 앉을 수 있는 의자"},
+    ]},
+    {"name": "원더풀 위크 (2026-03-19 점검 후 ~ 2026-03-26 09:59)", "rewards": [
+        {"name": "원더블록 획득 확률 20% 상승", "part": "이벤트", "note": "위습의 원더베리 사용 시 적용"},
+    ]},
+]
+
 sale_607_packages = [
     {"name": "추가옵션 전승 스크롤", "label": "NEW", "price": 49000, "unit": "캐시",
      "note": "추가옵션 정보 전승 · 1회 교환 가능 · 유효기간 30일 · 상시판매", "items": []},
@@ -395,26 +450,34 @@ data = {
             "packages": sale_607_packages,
             "events": [],
         },
+        {
+            "id": 605, "type": "Sale",
+            "title": "3월 19일 위습의 원더베리 업데이트 & 원더풀 위크",
+            "date": "2026-03-19", "status": "판매중",
+            "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
+            "packages": sale_605_packages,
+            "events": sale_605_events,
+        },
     ],
     "progress": {
         "total_planned_sale": 100,
-        "completed_sale": 6,
+        "completed_sale": 7,
         "completed_endofsale": 0,
-        "total_items_registered": 224,
+        "total_items_registered": 248,
     },
     "current_task": {
-        "id": 605,
+        "id": 596,
         "type": "Sale",
-        "title": "Sale/605 위습의 원더베리 & 루나 크리스탈",
-        "status": "진행 중",
-        "url": "https://maplestory.nexon.com/News/CashShop/Sale/605",
+        "title": "Sale/596 초이스 헤어/성형 쿠폰",
+        "status": "대기",
+        "url": "https://maplestory.nexon.com/News/CashShop/Sale/596",
         "steps": [
-            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "completed"},
-            {"name": "배너 이미지 다운로드 (content.png)", "status": "completed"},
-            {"name": "슬랩 분할 & 섹션 식별", "status": "completed"},
-            {"name": "HD 섹션 크롭 생성", "status": "completed"},
-            {"name": "OCR 판독으로 아이템명 확정", "status": "completed"},
-            {"name": "Notion DB 아이템 등록", "status": "in_progress"},
+            {"name": "원문 공지 확인 & 배너 URL 추출", "status": "pending"},
+            {"name": "배너 이미지 다운로드 (content.png)", "status": "pending"},
+            {"name": "슬랩 분할 & 섹션 식별", "status": "pending"},
+            {"name": "HD 섹션 크롭 생성", "status": "pending"},
+            {"name": "OCR 판독으로 아이템명 확정", "status": "pending"},
+            {"name": "Notion DB 아이템 등록", "status": "pending"},
             {"name": "검증 표 출력 & 오타 확인", "status": "pending"},
             {"name": "대시보드 data.json 갱신 & 배포", "status": "pending"},
         ],
@@ -422,9 +485,9 @@ data = {
     },
     "last_ocr_preview": {
         "id": 605,
-        "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과 (사용자 확인 대기)",
-        "confirmed": False,
-        "confirmed_at": None,
+        "title": "Sale/605 위습의 원더베리 & 루나 크리스탈 - 판독 결과",
+        "confirmed": True,
+        "confirmed_at": "2026-04-22",
         "summary": "총 24개 아이템 후보 (원더베리 3 + 원더블록 32기 13 + 루나 크리스탈 1 + 루나 쁘띠 7기 6 + 이벤트 보상 1)",
         "categories": [
             {"name": "🫐 위습의 원더베리 팩 (3종, 상시판매, HOT)", "subcategories": [
@@ -466,8 +529,7 @@ data = {
         ],
     },
     "queue": [
-        {"id": 605, "type": "Sale", "title": "원더베리/루나크리스탈", "status": "진행 중"},
-        {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "대기"},
+        {"id": 596, "type": "Sale", "title": "초이스 헤어/성형 쿠폰", "status": "진행 중"},
         {"id": 595, "type": "Sale", "title": "성별 변경 쿠폰", "status": "대기"},
         {"id": 560, "type": "Sale", "title": "스타일링 스타터 패키지", "status": "대기"},
     ],
@@ -478,6 +540,7 @@ data = {
         {"id": 609, "type": "Sale", "title": "프리미엄 헤어 & 성형 쿠폰", "items": 42, "completed_at": "2026-04-22"},
         {"id": 608, "type": "Sale", "title": "메이플스토리 & 진 (아스트랄 세레나데)", "items": 45, "completed_at": "2026-04-22"},
         {"id": 607, "type": "Sale", "title": "추가옵션/잠재능력 전승 스크롤", "items": 2, "completed_at": "2026-04-22"},
+        {"id": 605, "type": "Sale", "title": "위습의 원더베리 & 루나 크리스탈", "items": 24, "completed_at": "2026-04-22"},
     ],
 }
 
