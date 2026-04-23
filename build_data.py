@@ -841,6 +841,14 @@ data = {
     ],
 }
 
+# Load EndOfSale notices (aggregated from Notion, written by fetch pipeline)
+eos_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "endofsales.json")
+if os.path.exists(eos_path):
+    with open(eos_path, encoding="utf-8") as f:
+        data["endofsales"] = json.load(f)
+else:
+    data["endofsales"] = []
+
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
@@ -849,5 +857,8 @@ with open(out, "w", encoding="utf-8") as f:
 pkg_count = sum(len(s["packages"]) for s in data["sales"])
 item_count = sum(len(p["items"]) for s in data["sales"] for p in s["packages"])
 event_reward = sum(len(e["rewards"]) for s in data["sales"] for e in s["events"])
-print(f"packages: {pkg_count}, 구성품: {item_count}, 이벤트 보상: {event_reward}")
+eos_notice_count = len(data["endofsales"])
+eos_pkg_count = sum(len(n.get("packages", [])) for n in data["endofsales"])
+print(f"Sale: packages={pkg_count}, 구성품={item_count}, 이벤트 보상={event_reward}")
+print(f"EndOfSale: notices={eos_notice_count}, packages={eos_pkg_count}")
 print(f"Total: {pkg_count + item_count + event_reward}")
