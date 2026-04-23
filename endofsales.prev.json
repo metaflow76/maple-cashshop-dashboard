@@ -33,16 +33,16 @@
             "unit": null,
             "label": null,
             "update": null,
-            "note": "남"
+            "note": null
           },
           {
-            "name": "레이어드 메모리즈",
-            "part": "한벌옷",
+            "name": "한벌옷",
+            "part": "상의",
             "price": null,
             "unit": null,
             "label": "한벌옷",
             "update": null,
-            "note": "남"
+            "note": null
           },
           {
             "name": "퓨어 화이트 슬립온",
@@ -51,47 +51,11 @@
             "unit": null,
             "label": null,
             "update": null,
-            "note": "남"
+            "note": null
           },
           {
             "name": "스위트 밀키 웨이",
             "part": "무기",
-            "price": null,
-            "unit": null,
-            "label": null,
-            "update": null,
-            "note": null
-          },
-          {
-            "name": "핑크 위시",
-            "part": "모자",
-            "price": null,
-            "unit": null,
-            "label": null,
-            "update": null,
-            "note": "여"
-          },
-          {
-            "name": "블루밍 버블검",
-            "part": "한벌옷",
-            "price": null,
-            "unit": null,
-            "label": null,
-            "update": null,
-            "note": "여"
-          },
-          {
-            "name": "코랄 레그 워머 부츠",
-            "part": "신발",
-            "price": null,
-            "unit": null,
-            "label": null,
-            "update": null,
-            "note": "여"
-          },
-          {
-            "name": "네오 레트로 갤럭시",
-            "part": "망토",
             "price": null,
             "unit": null,
             "label": null,
