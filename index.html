@@ -18,11 +18,12 @@
   .chev { transition: transform 0.15s ease; display: inline-block; }
   .part-badge { display:inline-block; padding:1px 6px; border-radius:4px; font-size:11px; background:#e0e7ff; color:#3730a3; }
   .gender-badge { display:inline-block; padding:1px 6px; border-radius:4px; font-size:11px; background:#f1f5f9; color:#475569; }
+  mark { background:#fef08a; color:inherit; padding:0 1px; border-radius:2px; }
 </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 <div class="max-w-6xl mx-auto px-4 py-8">
-  <header class="mb-8">
+  <header class="mb-6">
     <h1 id="title" class="text-3xl font-bold mb-2"></h1>
     <div class="flex flex-wrap gap-3 text-sm text-slate-600">
       <a id="notion-link" href="#" target="_blank" class="text-indigo-600 hover:underline">📘 Notion DB</a>
@@ -31,14 +32,19 @@
     </div>
   </header>
 
-  <section class="mb-8">
-    <h2 class="text-xl font-bold mb-3">진행 현황</h2>
-    <div id="progress" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
-  </section>
-
-  <section id="current-task-section" class="mb-8 hidden">
-    <h2 class="text-xl font-bold mb-3">🛠️ 진행 중 작업</h2>
-    <div id="current-task" class="bg-amber-50 border border-amber-200 rounded-lg p-4"></div>
+  <section class="mb-8 sticky top-0 z-20 bg-slate-50/95 backdrop-blur py-3 -mx-4 px-4 border-b border-slate-200">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+      <div class="relative flex-1">
+        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">🔍</span>
+        <input id="global-search" type="search" autocomplete="off"
+               placeholder="제목 / 패키지명 / 아이템명 / 공지 ID 검색…"
+               class="w-full pl-9 pr-9 py-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400" />
+        <button id="search-clear" type="button"
+                class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 hidden px-2 text-lg leading-none"
+                title="검색어 지우기">✕</button>
+      </div>
+      <div id="search-summary" class="text-xs text-slate-500 sm:whitespace-nowrap"></div>
+    </div>
   </section>
 
   <section id="queue-section" class="mb-8 hidden">
@@ -46,36 +52,28 @@
     <div id="queue" class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"></div>
   </section>
 
-  <section id="completed-section" class="mb-8 hidden">
-    <h2 class="text-xl font-bold mb-3">✅ 완료 이력</h2>
-    <div id="completed" class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden"></div>
-  </section>
-
-  <section class="mb-8">
+  <section id="sales-section" class="mb-8">
     <div class="flex items-center justify-between mb-3">
-      <h2 class="text-xl font-bold">판매 공지</h2>
+      <h2 class="text-xl font-bold">판매 공지 <span id="sales-count" class="text-xs font-normal text-slate-500 ml-1"></span></h2>
       <div class="flex gap-2 text-xs">
         <button id="expand-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 펼치기</button>
         <button id="collapse-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 접기</button>
       </div>
     </div>
     <div id="sales" class="space-y-5"></div>
+    <div id="sales-empty" class="hidden text-sm text-slate-400 italic py-6 text-center">검색 결과 없음</div>
   </section>
 
   <section id="endofsales-section" class="mb-8 hidden">
     <div class="flex items-center justify-between mb-3">
-      <h2 class="text-xl font-bold">판매종료 공지</h2>
-      <div class="flex items-center gap-3">
-        <span id="endofsales-count" class="text-xs text-slate-500"></span>
-        <input id="endofsales-filter" type="search" placeholder="공지 ID 또는 제목 검색"
-               class="text-xs px-2 py-1 border border-slate-300 rounded w-56" />
-        <div class="flex gap-2 text-xs">
-          <button id="eos-expand-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 펼치기</button>
-          <button id="eos-collapse-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 접기</button>
-        </div>
+      <h2 class="text-xl font-bold">판매종료 공지 <span id="endofsales-count" class="text-xs font-normal text-slate-500 ml-1"></span></h2>
+      <div class="flex gap-2 text-xs">
+        <button id="eos-expand-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 펼치기</button>
+        <button id="eos-collapse-all" class="px-2 py-1 bg-slate-200 hover:bg-slate-300 rounded">전체 접기</button>
       </div>
     </div>
     <div id="endofsales" class="space-y-5"></div>
+    <div id="endofsales-empty" class="hidden text-sm text-slate-400 italic py-6 text-center">검색 결과 없음</div>
     <div id="endofsales-more" class="mt-4 text-center hidden">
       <button id="endofsales-load-more" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 rounded text-sm">더 보기</button>
     </div>
@@ -106,6 +104,22 @@ const fmtPrice = (p, u) => {
   return `${p.toLocaleString()} ${u || ''}`;
 };
 
+const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+}[c]));
+
+let __searchRegex = null;
+const setSearchRegex = (q) => {
+  if (!q) { __searchRegex = null; return; }
+  const esc = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  __searchRegex = new RegExp(esc, 'gi');
+};
+const hl = (s) => {
+  const safe = escapeHtml(s);
+  if (!__searchRegex) return safe;
+  return safe.replace(__searchRegex, m => `<mark>${m}</mark>`);
+};
+
 const itemsTable = (items) => {
   if (!items || items.length === 0) return '<div class="text-xs text-slate-400 italic py-2">구성품 없음</div>';
   return `
@@ -122,48 +136,12 @@ const itemsTable = (items) => {
         ${items.map((it, i) => `
           <tr class="border-b border-slate-50 last:border-0">
             <td class="py-1 text-slate-400">${i+1}</td>
-            <td class="py-1">${it.name}</td>
-            <td class="py-1"><span class="part-badge">${it.part}</span></td>
-            <td class="py-1"><span class="gender-badge">${it.note || ''}</span></td>
+            <td class="py-1">${hl(it.name)}</td>
+            <td class="py-1"><span class="part-badge">${escapeHtml(it.part)}</span></td>
+            <td class="py-1"><span class="gender-badge">${escapeHtml(it.note || '')}</span></td>
           </tr>`).join('')}
       </tbody>
     </table>`;
-};
-
-const renderOcrBlock = (ct, lastPreview) => {
-  const own = ct.ocr_results;
-  const preview = (!own && lastPreview) ? lastPreview : null;
-  const data = own || preview;
-  if (!data) return '';
-  const isOwn = !!own;
-  const headerTag = isOwn
-    ? '<span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-700">판독 완료</span>'
-    : `<span class="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-600">직전 기록 · ${preview ? `Sale/${preview.id}` : ''}</span>`;
-  const cats = (data.categories || []).map(cat => `
-    <div class="mt-2">
-      <div class="text-sm font-semibold text-slate-800 mb-1">${cat.name}</div>
-      ${(cat.subcategories || []).map(sc => `
-        <div class="ml-2 mb-1">
-          <div class="text-xs font-medium text-slate-600 mb-1">${sc.name}</div>
-          <div class="flex flex-wrap gap-1">
-            ${(sc.items || []).map(it => `<span class="text-xs px-2 py-0.5 bg-white border border-slate-200 rounded">${it}</span>`).join('')}
-          </div>
-        </div>`).join('')}
-    </div>`).join('');
-  return `
-    <div class="mt-5 pt-4 border-t border-amber-200">
-      <details class="bg-white rounded border border-slate-200">
-        <summary class="px-3 py-2 hover:bg-slate-50 flex items-center gap-2">
-          <span class="chev text-slate-400">▶</span>
-          <span class="font-semibold flex-1">🔍 OCR 판독 결과${data.title ? ` · ${data.title}` : ''}</span>
-          ${headerTag}
-        </summary>
-        <div class="px-3 pb-3 pt-1">
-          ${data.summary ? `<div class="text-xs text-slate-600 mb-2">${data.summary}</div>` : ''}
-          ${cats}
-        </div>
-      </details>
-    </div>`;
 };
 
 const rewardsTable = (rewards) => {
@@ -181,12 +159,96 @@ const rewardsTable = (rewards) => {
         ${rewards.map((r, i) => `
           <tr class="border-b border-slate-50 last:border-0">
             <td class="py-1 text-slate-400">${i+1}</td>
-            <td class="py-1">${r.name}</td>
-            <td class="py-1"><span class="part-badge">${r.part}</span></td>
-            <td class="py-1 text-slate-600">${r.note || ''}</td>
+            <td class="py-1">${hl(r.name)}</td>
+            <td class="py-1"><span class="part-badge">${escapeHtml(r.part)}</span></td>
+            <td class="py-1 text-slate-600">${hl(r.note || '')}</td>
           </tr>`).join('')}
       </tbody>
     </table>`;
+};
+
+const renderNoticeCard = (sale) => {
+  const packages = sale.packages || [];
+  const events = sale.events || [];
+  const totalItems = packages.reduce((acc, pk) => acc + (pk.items?.length || 0), 0);
+  const totalRewards = events.reduce((acc, e) => acc + (e.rewards?.length || 0), 0);
+  return `
+  <article class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+    <header class="px-5 py-4 border-b border-slate-100 flex items-start justify-between gap-3">
+      <div>
+        <div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
+          <span class="font-mono">${sale.type}/${sale.id}</span>
+          ${sale.date ? `<span>·</span><span>${escapeHtml(sale.date)}</span>` : ''}
+          ${statusBadge(sale.status)}
+          <span class="ml-2 text-slate-400">패키지 ${packages.length} · 구성품 ${totalItems} · 이벤트 보상 ${totalRewards}</span>
+        </div>
+        <h3 class="font-bold text-slate-900">${hl(sale.title)}</h3>
+      </div>
+      <a href="${sale.url}" target="_blank" class="text-xs text-indigo-600 hover:underline whitespace-nowrap">원문 ↗</a>
+    </header>
+    <div class="px-5 py-4">
+      <div class="text-xs font-semibold text-slate-500 mb-2">📦 패키지 (${packages.length})</div>
+      <div class="space-y-1">
+        ${packages.map(pkg => `
+          <details class="border border-slate-100 rounded">
+            <summary class="px-3 py-2 hover:bg-slate-50 flex items-center gap-2">
+              <span class="chev text-slate-400">▶</span>
+              <span class="font-medium flex-1">${hl(pkg.name || '')}</span>
+              ${pkg.label ? `<span class="text-xs px-2 py-0.5 rounded ${labelClass(pkg.label)}">${escapeHtml(pkg.label)}</span>` : ''}
+              <span class="font-mono text-xs text-slate-600">${fmtPrice(pkg.price, pkg.unit)}</span>
+              <span class="text-xs text-slate-500 w-16 text-right">구성품 ${pkg.items?.length || 0}</span>
+            </summary>
+            <div class="px-3 pb-3 pt-1 bg-slate-50">
+              ${pkg.note ? `<div class="text-xs text-slate-600 mb-1">💡 ${hl(pkg.note)}</div>` : ''}
+              ${itemsTable(pkg.items)}
+            </div>
+          </details>`).join('')}
+      </div>
+      ${events.length ? `
+        <div class="mt-5 pt-4 border-t border-slate-100">
+          <div class="text-xs font-semibold text-slate-500 mb-2">🎁 이벤트 보상 (${events.length})</div>
+          <div class="space-y-1">
+            ${events.map(ev => `
+              <details class="border border-slate-100 rounded">
+                <summary class="px-3 py-2 hover:bg-slate-50 flex items-center gap-2">
+                  <span class="chev text-slate-400">▶</span>
+                  <span class="font-medium flex-1">${hl(ev.name)}</span>
+                  <span class="text-xs text-slate-500">보상 ${ev.rewards.length}</span>
+                </summary>
+                <div class="px-3 pb-3 pt-1 bg-slate-50">
+                  ${rewardsTable(ev.rewards)}
+                </div>
+              </details>`).join('')}
+          </div>
+        </div>` : ''}
+    </div>
+  </article>`;
+};
+
+// 검색 매칭: 제목 / ID / 패키지명 / 아이템명 / 이벤트명 / 보상명
+const buildMatcher = (q) => {
+  if (!q) return () => true;
+  const needle = q.toLowerCase();
+  const inText = (s) => (s || '').toString().toLowerCase().includes(needle);
+  return (sale) => {
+    if (String(sale.id).toLowerCase().includes(needle)) return true;
+    if (inText(sale.title)) return true;
+    for (const pkg of (sale.packages || [])) {
+      if (inText(pkg.name)) return true;
+      if (inText(pkg.note)) return true;
+      if (inText(pkg.label)) return true;
+      for (const it of (pkg.items || [])) {
+        if (inText(it.name) || inText(it.part) || inText(it.note)) return true;
+      }
+    }
+    for (const ev of (sale.events || [])) {
+      if (inText(ev.name)) return true;
+      for (const r of (ev.rewards || [])) {
+        if (inText(r.name) || inText(r.part) || inText(r.note)) return true;
+      }
+    }
+    return false;
+  };
 };
 
 fetch('data.json').then(r => r.json()).then(data => {
@@ -194,96 +256,6 @@ fetch('data.json').then(r => r.json()).then(data => {
   document.getElementById('notion-link').href = data.meta.notion_db_url;
   document.getElementById('generated-at').textContent = `📅 ${data.meta.generated_at}`;
   document.getElementById('generated-by').textContent = `🤖 ${data.meta.generated_by}`;
-
-  const p = data.progress;
-  const stats = [
-    { label: '목표 판매 공지', value: p.total_planned_sale, color: 'indigo' },
-    { label: '완료 Sale', value: p.completed_sale, color: 'emerald' },
-    { label: '완료 EndOfSale', value: p.completed_endofsale, color: 'amber' },
-    { label: '등록 아이템', value: p.total_items_registered, color: 'rose' },
-  ];
-  document.getElementById('progress').innerHTML = stats.map(s => `
-    <div class="bg-white rounded-lg shadow-sm p-4 border border-slate-200">
-      <div class="text-xs text-slate-500 mb-1">${s.label}</div>
-      <div class="text-2xl font-bold text-${s.color}-600">${s.value}</div>
-    </div>`).join('');
-
-  if (data.current_task) {
-    const ct = data.current_task;
-    document.getElementById('current-task-section').classList.remove('hidden');
-    const steps = ct.steps || [];
-    const doneCnt = steps.filter(s => s.status === 'done').length;
-    const totalCnt = steps.length;
-    const pct = totalCnt ? Math.round(doneCnt / totalCnt * 100) : 0;
-    const stepIcon = (status) => {
-      if (status === 'done') return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white text-xs">✓</span>';
-      if (status === 'in_progress') return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-400 text-white text-xs animate-pulse">⋯</span>';
-      return '<span class="inline-flex items-center justify-center w-5 h-5 rounded-full border-2 border-slate-300 text-slate-400 text-xs">○</span>';
-    };
-    const stepTextCls = (status) => {
-      if (status === 'done') return 'text-slate-500 line-through';
-      if (status === 'in_progress') return 'text-slate-900 font-semibold';
-      return 'text-slate-500';
-    };
-    document.getElementById('current-task').innerHTML = `
-      <div class="flex items-start justify-between gap-3 mb-4">
-        <div class="flex-1">
-          <div class="flex items-center gap-2 text-xs text-amber-700 mb-1">
-            <span class="font-mono">${ct.type}/${ct.id}</span>
-            <span>·</span>
-            <span class="inline-block px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-semibold">${ct.status}</span>
-            <span class="animate-pulse">⏳</span>
-          </div>
-          <div class="font-bold text-slate-900">${ct.title}</div>
-        </div>
-        <a href="${ct.url}" target="_blank" class="text-xs text-indigo-600 hover:underline whitespace-nowrap">원문 ↗</a>
-      </div>
-      ${steps.length ? `
-      <div class="mb-3">
-        <div class="flex items-center justify-between text-xs text-slate-600 mb-1">
-          <span>진행률</span>
-          <span class="font-mono">${doneCnt}/${totalCnt} · ${pct}%</span>
-        </div>
-        <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
-          <div class="bg-emerald-500 h-2 transition-all" style="width:${pct}%"></div>
-        </div>
-      </div>
-      <ul class="space-y-2 mt-4">
-        ${steps.map((s, i) => `
-          <li class="flex items-center gap-3">
-            ${stepIcon(s.status)}
-            <span class="text-xs text-slate-400 w-6">${String(i+1).padStart(2, '0')}</span>
-            <span class="text-sm ${stepTextCls(s.status)}">${s.name}</span>
-          </li>`).join('')}
-      </ul>` : ''}
-      ${renderOcrBlock(ct, data.last_ocr_preview)}`;
-  }
-
-  if (data.completed && data.completed.length) {
-    document.getElementById('completed-section').classList.remove('hidden');
-    document.getElementById('completed').innerHTML = `
-      <table class="w-full text-sm">
-        <thead class="text-xs text-slate-500 bg-slate-50">
-          <tr>
-            <th class="text-left px-4 py-2 font-medium w-16">#</th>
-            <th class="text-left px-4 py-2 font-medium w-24">공지</th>
-            <th class="text-left px-4 py-2 font-medium">제목</th>
-            <th class="text-right px-4 py-2 font-medium w-24">아이템</th>
-            <th class="text-left px-4 py-2 font-medium w-28">완료일</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${data.completed.map((c, i) => `
-            <tr class="border-t border-slate-100">
-              <td class="px-4 py-2 text-emerald-600">✓</td>
-              <td class="px-4 py-2 font-mono text-xs">${c.type}/${c.id}</td>
-              <td class="px-4 py-2">${c.title}</td>
-              <td class="px-4 py-2 text-right font-mono text-xs text-slate-600">${c.items}</td>
-              <td class="px-4 py-2 text-xs text-slate-500">${c.completed_at}</td>
-            </tr>`).join('')}
-        </tbody>
-      </table>`;
-  }
 
   if (data.queue && data.queue.length) {
     document.getElementById('queue-section').classList.remove('hidden');
@@ -305,121 +277,107 @@ fetch('data.json').then(r => r.json()).then(data => {
               <tr class="border-t border-slate-100 ${isActive ? 'bg-amber-50' : ''}">
                 <td class="px-4 py-2 text-slate-400">${i+1}</td>
                 <td class="px-4 py-2 font-mono text-xs">${q.type}/${q.id}</td>
-                <td class="px-4 py-2">${q.title}</td>
-                <td class="px-4 py-2"><span class="text-xs px-2 py-0.5 rounded ${badgeCls}">${q.status}</span></td>
+                <td class="px-4 py-2">${escapeHtml(q.title)}</td>
+                <td class="px-4 py-2"><span class="text-xs px-2 py-0.5 rounded ${badgeCls}">${escapeHtml(q.status)}</span></td>
               </tr>`;
           }).join('')}
         </tbody>
       </table>`;
   }
 
-  const renderNoticeCard = (sale) => {
-    const packages = sale.packages || [];
-    const events = sale.events || [];
-    const totalItems = packages.reduce((acc, pk) => acc + (pk.items?.length || 0), 0);
-    const totalRewards = events.reduce((acc, e) => acc + (e.rewards?.length || 0), 0);
-    return `
-    <article class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
-      <header class="px-5 py-4 border-b border-slate-100 flex items-start justify-between gap-3">
-        <div>
-          <div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
-            <span class="font-mono">${sale.type}/${sale.id}</span>
-            ${sale.date ? `<span>·</span><span>${sale.date}</span>` : ''}
-            ${statusBadge(sale.status)}
-            <span class="ml-2 text-slate-400">패키지 ${packages.length} · 구성품 ${totalItems} · 이벤트 보상 ${totalRewards}</span>
-          </div>
-          <h3 class="font-bold text-slate-900">${sale.title}</h3>
-        </div>
-        <a href="${sale.url}" target="_blank" class="text-xs text-indigo-600 hover:underline whitespace-nowrap">원문 ↗</a>
-      </header>
-      <div class="px-5 py-4">
-        <div class="text-xs font-semibold text-slate-500 mb-2">📦 패키지 (${packages.length})</div>
-        <div class="space-y-1">
-          ${packages.map(pkg => `
-            <details class="border border-slate-100 rounded">
-              <summary class="px-3 py-2 hover:bg-slate-50 flex items-center gap-2">
-                <span class="chev text-slate-400">▶</span>
-                <span class="font-medium flex-1">${pkg.name || ''}</span>
-                ${pkg.label ? `<span class="text-xs px-2 py-0.5 rounded ${labelClass(pkg.label)}">${pkg.label}</span>` : ''}
-                <span class="font-mono text-xs text-slate-600">${fmtPrice(pkg.price, pkg.unit)}</span>
-                <span class="text-xs text-slate-500 w-16 text-right">구성품 ${pkg.items?.length || 0}</span>
-              </summary>
-              <div class="px-3 pb-3 pt-1 bg-slate-50">
-                ${pkg.note ? `<div class="text-xs text-slate-600 mb-1">💡 ${pkg.note}</div>` : ''}
-                ${itemsTable(pkg.items)}
-              </div>
-            </details>`).join('')}
-        </div>
-        ${events.length ? `
-          <div class="mt-5 pt-4 border-t border-slate-100">
-            <div class="text-xs font-semibold text-slate-500 mb-2">🎁 이벤트 보상 (${events.length})</div>
-            <div class="space-y-1">
-              ${events.map(ev => `
-                <details class="border border-slate-100 rounded">
-                  <summary class="px-3 py-2 hover:bg-slate-50 flex items-center gap-2">
-                    <span class="chev text-slate-400">▶</span>
-                    <span class="font-medium flex-1">${ev.name}</span>
-                    <span class="text-xs text-slate-500">보상 ${ev.rewards.length}</span>
-                  </summary>
-                  <div class="px-3 pb-3 pt-1 bg-slate-50">
-                    ${rewardsTable(ev.rewards)}
-                  </div>
-                </details>`).join('')}
-            </div>
-          </div>` : ''}
-      </div>
-    </article>`;
+  // ----- 판매 공지 -----
+  const salesAll = data.sales || [];
+  const salesContainer = document.getElementById('sales');
+  const salesEmpty = document.getElementById('sales-empty');
+  const salesCountEl = document.getElementById('sales-count');
+
+  // ----- 판매종료 공지 -----
+  const eosAll = data.endofsales || [];
+  const eosSection = document.getElementById('endofsales-section');
+  const eosContainer = document.getElementById('endofsales');
+  const eosEmpty = document.getElementById('endofsales-empty');
+  const eosCountEl = document.getElementById('endofsales-count');
+  const eosMoreWrap = document.getElementById('endofsales-more');
+  const eosMoreBtn = document.getElementById('endofsales-load-more');
+  if (eosAll.length) eosSection.classList.remove('hidden');
+
+  const PAGE = 20;
+  let eosShown = 0;
+  let eosFiltered = eosAll;
+
+  const renderEosBatch = (reset) => {
+    if (reset) { eosContainer.innerHTML = ''; eosShown = 0; }
+    const next = eosFiltered.slice(eosShown, eosShown + PAGE);
+    eosContainer.insertAdjacentHTML('beforeend', next.map(renderNoticeCard).join(''));
+    eosShown += next.length;
+    eosMoreWrap.classList.toggle('hidden', eosShown >= eosFiltered.length);
+    eosEmpty.classList.toggle('hidden', eosFiltered.length > 0);
+    eosCountEl.textContent = `${Math.min(eosShown, eosFiltered.length)} / ${eosFiltered.length}건`;
   };
 
-  document.getElementById('sales').innerHTML = data.sales.map(renderNoticeCard).join('');
+  // ----- 검색 -----
+  const searchEl = document.getElementById('global-search');
+  const searchClearBtn = document.getElementById('search-clear');
+  const searchSummary = document.getElementById('search-summary');
 
-  const allDetails = () => document.querySelectorAll('#sales details');
-  document.getElementById('expand-all').onclick = () => allDetails().forEach(d => d.open = true);
-  document.getElementById('collapse-all').onclick = () => allDetails().forEach(d => d.open = false);
+  const applySearch = () => {
+    const q = searchEl.value.trim();
+    setSearchRegex(q);
+    const matcher = buildMatcher(q.toLowerCase());
 
-  const eosAll = data.endofsales || [];
-  if (eosAll.length) {
-    const section = document.getElementById('endofsales-section');
-    const container = document.getElementById('endofsales');
-    const moreWrap = document.getElementById('endofsales-more');
-    const moreBtn = document.getElementById('endofsales-load-more');
-    const countEl = document.getElementById('endofsales-count');
-    const filterEl = document.getElementById('endofsales-filter');
-    section.classList.remove('hidden');
+    const salesFiltered = salesAll.filter(matcher);
+    salesContainer.innerHTML = salesFiltered.map(renderNoticeCard).join('');
+    salesEmpty.classList.toggle('hidden', salesFiltered.length > 0);
+    salesCountEl.textContent = q
+      ? `${salesFiltered.length} / ${salesAll.length}건`
+      : `${salesAll.length}건`;
 
-    const PAGE = 20;
-    let shown = 0;
-    let filtered = eosAll;
+    eosFiltered = eosAll.filter(matcher);
+    renderEosBatch(true);
 
-    const updateCount = () => {
-      countEl.textContent = `${Math.min(shown, filtered.length)} / ${filtered.length}건`;
-    };
+    searchClearBtn.classList.toggle('hidden', q.length === 0);
+    if (q) {
+      searchSummary.textContent = `"${q}" → 판매 ${salesFiltered.length} · 종료 ${eosFiltered.length}`;
+    } else {
+      searchSummary.textContent = '';
+    }
+  };
 
-    const renderBatch = (reset) => {
-      if (reset) { container.innerHTML = ''; shown = 0; }
-      const next = filtered.slice(shown, shown + PAGE);
-      container.insertAdjacentHTML('beforeend', next.map(renderNoticeCard).join(''));
-      shown += next.length;
-      moreWrap.classList.toggle('hidden', shown >= filtered.length);
-      updateCount();
-    };
+  // 초기 렌더
+  applySearch();
 
-    const applyFilter = () => {
-      const q = filterEl.value.trim().toLowerCase();
-      filtered = q
-        ? eosAll.filter(n => String(n.id).includes(q) || (n.title || '').toLowerCase().includes(q))
-        : eosAll;
-      renderBatch(true);
-    };
+  searchEl.addEventListener('input', applySearch);
+  searchClearBtn.addEventListener('click', () => {
+    searchEl.value = '';
+    searchEl.focus();
+    applySearch();
+  });
+  // ESC로 검색 초기화
+  searchEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchEl.value = '';
+      applySearch();
+    }
+  });
+  // Cmd/Ctrl+K 단축키로 검색창 포커스
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      searchEl.focus();
+      searchEl.select();
+    }
+  });
 
-    renderBatch(true);
-    moreBtn.onclick = () => renderBatch(false);
-    filterEl.addEventListener('input', applyFilter);
+  eosMoreBtn.onclick = () => renderEosBatch(false);
 
-    const eosDetails = () => document.querySelectorAll('#endofsales details');
-    document.getElementById('eos-expand-all').onclick = () => eosDetails().forEach(d => d.open = true);
-    document.getElementById('eos-collapse-all').onclick = () => eosDetails().forEach(d => d.open = false);
-  }
+  document.getElementById('expand-all').onclick =
+    () => document.querySelectorAll('#sales details').forEach(d => d.open = true);
+  document.getElementById('collapse-all').onclick =
+    () => document.querySelectorAll('#sales details').forEach(d => d.open = false);
+  document.getElementById('eos-expand-all').onclick =
+    () => document.querySelectorAll('#endofsales details').forEach(d => d.open = true);
+  document.getElementById('eos-collapse-all').onclick =
+    () => document.querySelectorAll('#endofsales details').forEach(d => d.open = false);
 });
 </script>
 </body>
